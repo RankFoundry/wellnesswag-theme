@@ -53,7 +53,7 @@ if ( 'Wellness Wag' === CURRENT_THEME_NAME ) {
 		48
 	);
 	$themeUpdateChecker->setBranch('master');
-    $themeUpdateChecker->setAuthentication('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');
+    //$themeUpdateChecker->setAuthentication('');
 }
 
 
