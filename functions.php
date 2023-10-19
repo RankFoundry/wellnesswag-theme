@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.3');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.4');
 }
 
 // Define theme directory path
@@ -65,53 +65,57 @@ function wellness_wag_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'wellness_wag_enqueue_styles' ); 
 
+// Remove trailing slash from pagination links
+add_filter('paginate_links','untrailingslashit');
+add_filter( 'get_pagenum_link', 'untrailingslashit');
+
 function custom_quill_scripts() {
 	$inline_script = <<<SCRIPT
-        document.addEventListener("DOMContentLoaded", function() {
-			function getParameterByName(name) {
-				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-				const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-					results = regex.exec(location.search);
-				return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-			}
+	document.addEventListener("DOMContentLoaded", function() {
+		function getParameterByName(name) {
+			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+				results = regex.exec(location.search);
+			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
 
-			function setCookie(name, value, days) {
-				const d = new Date();
-				d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-				const expires = "expires=" + d.toUTCString();
-				document.cookie = name + "=" + value + ";" + expires + ";path=/";
-			}
+		function setCookie(name, value, days) {
+			const d = new Date();
+			d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+			const expires = "expires=" + d.toUTCString();
+			document.cookie = name + "=" + value + ";" + expires + ";path=/";
+		}
 
-			function getCookie(cname) {
-				const name = cname + "=";
-				const decodedCookie = decodeURIComponent(document.cookie);
-				const ca = decodedCookie.split(';');
-				for(let i = 0; i < ca.length; i++) {
-					let c = ca[i];
-					while (c.charAt(0) === ' ') {
-						c = c.substring(1);
-					}
-					if (c.indexOf(name) === 0) {
-						return c.substring(name.length, c.length);
-					}
+		function getCookie(cname) {
+			const name = cname + "=";
+			const decodedCookie = decodeURIComponent(document.cookie);
+			const ca = decodedCookie.split(';');
+			for(let i = 0; i < ca.length; i++) {
+				let c = ca[i];
+				while (c.charAt(0) === ' ') {
+					c = c.substring(1);
 				}
-				return "";
-			}
-
-			if (!getCookie('_utd')) {
-				const parameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid','ga_client'];
-				let trackingData = {};
-
-				parameters.forEach(param => {
-					const value = getParameterByName(param);
-					if (value) trackingData[param] = value;
-				});
-
-				if (Object.keys(trackingData).length > 0) {
-					setCookie('_utd', JSON.stringify(trackingData), 30); // 30 days expiry
+				if (c.indexOf(name) === 0) {
+					return c.substring(name.length, c.length);
 				}
 			}
-		});
+			return "";
+		}
+
+		if (!getCookie('_utd')) {
+			const parameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid','ga_client'];
+			let trackingData = {};
+
+			parameters.forEach(param => {
+				const value = getParameterByName(param);
+				if (value) trackingData[param] = value;
+			});
+
+			if (Object.keys(trackingData).length > 0) {
+				setCookie('_utd', JSON.stringify(trackingData), 30); // 30 days expiry
+			}
+		}
+	});
 
 	SCRIPT;
 
