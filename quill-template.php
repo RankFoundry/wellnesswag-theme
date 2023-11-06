@@ -221,7 +221,22 @@ $json_data = json_encode($data);
 // Base64 encode the JSON
 $base64_encoded_data = base64_encode($json_data);
 //$url = 'https://webhook.site/b2c93b84-3d04-4e24-bda9-3d86857c2e99';
-$url = 'https://wellnesswag.getheally.com/patient_admin/prefill?redirect=sched&preset='.$base64_encoded_data;
+
+		 $utm_params = [];
+		 $utm_params['from'] = 'wellness';
+		 isset($trackingData['gclid']) ? $utm_params['gclid']  = sanitize_text_field($trackingData['gclid']) : false;
+         isset($trackingData['ga_client']) ? $utm_params['gaclient']  = sanitize_text_field($trackingData['ga_client']) : false;
+         isset($trackingData['utm_source']) ? $utm_params['utm_source']  = sanitize_text_field($trackingData['utm_source']) : false;
+         isset($trackingData['utm_medium']) ? $utm_params['utm_medium']  = sanitize_text_field($trackingData['utm_medium']) : false;
+         isset($trackingData['utm_campaign']) ? $utm_params['utm_campaign']  = sanitize_text_field($trackingData['utm_campaign']) : false;
+         isset($trackingData['utm_term']) ? $utm_params['utm_term']  = sanitize_text_field($trackingData['utm_term']) : false;
+         isset($trackingData['utm_content']) ? $utm_params['utm_content']  = sanitize_text_field($trackingData['utm_content']) : false;
+		 $utm_params['cuid'] = $_COOKIE['cuid'];
+		 $utm_params['creferrer'] = $_COOKIE['creferrer'];
+		
+
+
+$url = 'https://wellnesswag.getheally.com/patient_admin/prefill?redirect=sched&'. http_build_query($utm_params) .'&preset='.$base64_encoded_data;
 
 //var_dump($url,$data); die;
 

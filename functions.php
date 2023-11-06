@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.4');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.5');
 }
 
 // Define theme directory path
@@ -71,7 +71,18 @@ add_filter( 'get_pagenum_link', 'untrailingslashit');
 
 function custom_quill_scripts() {
 	$inline_script = <<<SCRIPT
+	
 	document.addEventListener("DOMContentLoaded", function() {
+		function generateString(length) {
+			const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+			let result = '';
+			const charactersLength = characters.length;
+			for (let i = 0; i < length; i++) {
+				result += characters.charAt(Math.floor(Math.random() * charactersLength));
+			}
+			return result;
+		}
+		
 		function getParameterByName(name) {
 			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 			const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -101,6 +112,18 @@ function custom_quill_scripts() {
 			}
 			return "";
 		}
+		
+		const deleteCookie = name => setCookie(name, '', -1);
+		
+		let customUserId;
+		customUserId = localStorage.getItem("tcustom_user_id") || generateString(10);
+		localStorage.setItem("tcustom_user_id", customUserId);
+		setCookie('cuid', customUserId);
+
+		let creferrer;
+		creferrer = localStorage.getItem("tcreferrer") || document.referrer || null;
+		localStorage.setItem("tcreferrer", creferrer);
+		setCookie('creferrer', creferrer);
 
 		if (!getCookie('_utd')) {
 			const parameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid','ga_client'];
@@ -115,6 +138,8 @@ function custom_quill_scripts() {
 				setCookie('_utd', JSON.stringify(trackingData), 30); // 30 days expiry
 			}
 		}
+		
+		posthog?.identify(customUserId, {creferrer});
 	});
 
 	SCRIPT;
