@@ -243,7 +243,7 @@ $url = 'https://wellnesswag.getheally.com/patient_admin/prefill?redirect=sched&'
 if( isset($_GET['email']) && isset($_GET['lname']) && isset($_GET['fname']) && isset($_GET['phone']) && isset($_GET['state']) )
 wp_redirect($url);
 else
-wp_redirect('/blog/quillforms/wellnesswagesaletter');
+wp_redirect('/blog/get-started/esa-letter');
 
 exit; 
 ?>
