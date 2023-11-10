@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.6');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.7');
 }
 
 // Define theme directory path
@@ -55,6 +55,23 @@ if ( 'Wellness Wag' === CURRENT_THEME_NAME ) {
 	$themeUpdateChecker->setBranch('master');
     //$themeUpdateChecker->setAuthentication('');
 }
+
+/*--------------------------------------------------------------*/
+/*--------------------- WP Auto Updates ------------------------*/
+/*--------------------------------------------------------------*/
+
+// allows WP plugins to automatically update.
+add_filter('auto_update_plugin', '__return_true');
+
+// allow themes to automatically update.
+add_filter('auto_update_theme', '__return_true');
+
+// allow WP core updates.
+add_filter('allow_minor_auto_core_updates', '__return_true');
+add_filter('allow_major_auto_core_updates', '__return_true');
+
+// force auto updates even for version controlled code enviroments.
+add_filter('automatic_updates_is_vcs_checkout', '__return_false', 1);
 
 
 /*---------------------------------------------------------------*/
