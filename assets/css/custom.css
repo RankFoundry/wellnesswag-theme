@@ -1,0 +1,161 @@
+body.no-header.no-footer .entry-content-wrap{
+	padding: 0px;
+}
+.work-img-sm-1{
+	display: none;
+}
+.work-img-sm-2{
+	display: none;
+}
+.how-work-content .kt-blocks-info-box-text{
+	text-align: left;
+}
+.hiw-box .kt-blocks-info-box-text span{
+	display: inline-block;
+    padding-bottom: 12px;
+	position: relative;
+	padding-left: 20px;
+}
+.hiw-box .kt-blocks-info-box-text span::before{
+	position: absolute;
+    content: "";
+    background: #000;
+    height: 6px;
+    width: 6px;
+    border-radius: 999px;
+    top: 26%;
+    left: 0px;
+}
+@media screen and (max-width: 1108px){
+	.ppc-landing-header-title{
+		font-size: 36px!important;
+	}
+}
+@media screen and (max-width: 951px){
+	.ppc-landing-header-title {
+		font-size: 24px!important;
+	}
+	.header-title-right-section .kt-inside-inner-col{
+		padding-top: 26px!important;
+	}
+}
+@media screen and (max-width: 767px){
+	.ppc-landing-page-banner-highlights{
+	max-width: 250px;
+}
+	.how-work-content p{
+		font-size: 16px!important;
+		line-height: 20px!important;
+	}
+	.header-title-right-section .sm-mx-auto{
+		margin: 0px auto!important;
+	}
+	.ppc-landing-page-banner-image {
+		display: block;
+		margin: 0px auto;
+		margin-top: 14px!important;
+	}
+	.ppc-landing-page-banner-image figure{
+		margin-right: 0px!important;
+	}
+	.ppc-landing-page-banner-image img{
+		max-width: 100px;
+	}
+	.ppc-landing-page-banner-highlights .kt-inside-inner-col{
+		padding-left: 0px!important;
+    	align-items: flex-start!important;
+	}
+	.header-title-right-section .kt-inside-inner-col{
+		padding-top: 0px!important;
+		padding-bottom: 0px!important;
+    	text-align: center;
+	}
+	.header-title-right-section .banner-title{
+		padding-bottom: 0px!important;
+	}
+	.work-img-sm-2{
+		display: block;
+	}
+	.banner-image-left-section img{
+		width:100%;
+	}
+	.work-img-2{
+		position: absolute;
+		top: 29%;
+    transform: translate(-50%, -115%);
+    left: 114px;
+		z-index: -1;
+	}
+	.banner-image-left-section figure{
+		width:100%;
+	}
+	.work-second-child{
+		margin-left: auto;
+	}
+	.how-work-content{
+		max-width: 355px;
+    display: flex;
+	}
+	.how-work-content .kt-row-column-wrap{
+		width:100%;
+	}
+	.how-work-content > .wp-block-kadence-column{
+		z-index: 2!important;
+	}
+	.banner-btn{
+		justify-content: center!important;
+	}
+	.ppc-landing-page-how-its-work .kt-inside-inner-col{
+		    justify-content: center;
+    align-items: center;
+	}
+	.ppc-landing-page-how-its-work .how-work-content{
+		width: 100%;
+	}
+	.work-img-1{
+			position: absolute;
+		top: -133%;
+		transform: translate(-50%, -50%);
+		right: -64px;
+		}
+	.ppc-landing-page-how-its-work .kt-blocks-info-box-media{
+		padding-bottom: 0px;
+	}
+	.ppc-landing-page-how-its-work .kadence-info-box-image-inner-intrisic-container{
+		max-width: 50px!important;
+    padding-bottom: 0px;
+	}
+	.ppc-landing-page-how-its-work .wp-block-kadence-infobox{
+	 max-width: 224px;
+	}
+	.ppc-landing-page-how-its-work .work-img-1{
+		display: none;
+	}
+	.ppc-landing-page-how-its-work .work-img-2{
+		display: none;
+	}
+	.ppc-landing-page-faq-section .kt-accordion-panel-inner h5{
+		line-height: 20px!important;
+		font-size: 15px!important;
+	}
+	.ppc-landing-page-faq-section ul li{
+		line-height: 20px!important;
+		font-size: 15px!important;
+	}
+	
+	.ppc-landing-page-faq-section ul{
+		padding-left: 18px!important;
+	}
+	.ppc-landing-page-logo-section img{
+		max-width: 162px;
+	}
+	.work-img-sm-1{
+		display: block;
+	}
+}
+
+@media screen and (max-width: 576px){
+    .header-title-right-section .kt-inside-inner-col{
+		padding-left:0px!important;
+	}
+}

@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.7');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.8');
 }
 
 // Define theme directory path
@@ -78,7 +78,9 @@ add_filter('automatic_updates_is_vcs_checkout', '__return_false', 1);
 /*---------------------- Theme Styles ---------------------------*/
 /*---------------------------------------------------------------*/
 function wellness_wag_enqueue_styles() {
-	wp_enqueue_style( 'wellness-wag', get_stylesheet_directory_uri() . '/style.css', array(), 100 );
+	wp_enqueue_style( 'wellness-wag', get_stylesheet_directory_uri() . '/style.css', array(), WELLNESS_WAG_THEME_VERSION );
+	wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/assets/css/custom.css', array(), WELLNESS_WAG_THEME_VERSION );
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'wellness_wag_enqueue_styles' ); 
 
