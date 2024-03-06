@@ -1,3 +1,4 @@
+/* PPC Landing Page (steps) */
 body.no-header.no-footer .entry-content-wrap{
 	padding: 0px;
 }
@@ -157,5 +158,145 @@ body.no-header.no-footer .entry-content-wrap{
 @media screen and (max-width: 576px){
     .header-title-right-section .kt-inside-inner-col{
 		padding-left:0px!important;
+	}
+}
+
+
+
+
+/* ppc landing page style */
+.ppc-testimonial-section .kt-testimonial-meta-wrap{
+	justify-content: flex-end;
+}
+.ppc-about-emotional-support-animals-section p a{
+	color: #6C46D6;
+}
+.ppc-about-emotional-support-animals-section p a:hover{
+	color: var(--global-palette3);
+}
+.ppc-testimonial-section .kt-testimonial-content{
+	text-align: left;
+}
+
+.ppc-testimonial-section .kt-blocks-testimonial-carousel-item{
+	height: 100%;
+}
+
+.ppc-testimonial-section .kt-testimonial-item-wrap{
+	height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ppc-testimonial-section .kt-testimonial-meta-wrap{
+	margin-top: auto;
+	padding-top:10px;
+}
+
+.ppc-testimonial-section .kt-blocks-testimonial-carousel-item {
+	height: auto;
+}
+
+.ppc-testimonial-section .splide__arrow{
+	height: 2rem!important;
+	width: 2rem!important;
+	border-radius: 50px!important;
+	background: var(--global-palette4)!important;
+	color: var(--global-palette1)!important;
+}
+.ppc-testimonial-section .splide__arrow--next{
+	right: -26px!important;
+}
+
+.ppc-testimonial-section .splide__arrow--prev{
+	left: -26px!important;
+}
+.ppc-faq-section .kt-accordion-panel-inner p , .ppc-faq-section .kt-accordion-panel-inner li{
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: Lato;
+    text-transform: capitalize;
+	color: #142c2a!important;
+}
+
+.ppc-faq-section .kt-accordion-panel-inner p , .ppc-faq-section .kt-accordion-panel-inner ul{
+	margin-bottom:12px;
+}
+.ppc-money-back-guarantee-section{
+	position: relative;
+}
+.ppc-money-back-guarantee-section .ppc-money-back-guarantee-image-wrapper{
+	  position: absolute;
+    top: 32px;
+    left: -202px;
+}
+.ppc-video-section{
+	width: 100%;
+}
+.ppc-video-section .mejs-controls{
+	display: none;
+}
+.ppc-video-section .ppc-video-wrapper .mejs-overlay-button{
+  background: url('../images/play-button.png');
+  background-repeat: no-repeat;
+  height: 110px;
+  width: 110px;
+}
+.ppc-video-section .ppc-video-wrapper .mejs-overlay:hover>.mejs-overlay-button{
+	background-position: unset!important;
+}
+@media screen and (max-width: 1280px){
+	.ppc-money-back-guarantee-section .ppc-money-back-guarantee-image-wrapper {
+    top: 96px;
+    max-width: 346px;
+    left: -9px;
+}
+}
+@media screen and (max-width: 1024px){
+	.ppc-video-section .ppc-video-wrapper .mejs-overlay-button{
+		height: 90px;
+		width: 90px;
+		background-size: contain;
+	}
+}
+@media screen and (max-width: 767px){
+	.ppc-testimonial-section .splide__arrow--prev {
+		left: 6px !important;
+	}
+	.ppc-money-back-guarantee-section .ppc-money-back-guarantee-image-wrapper {
+    top: 128px;
+    max-width: 170px;
+    left: -11px;
+}
+	.ppc-video-section .ppc-video-wrapper .mejs-overlay-button{
+		height: 60px;
+		width: 60px;
+	}
+	.ppc-banner-section > .kt-inside-inner-col{
+	background-position: 64%;
+}
+	.ppc-testimonial-section .splide__arrow--next{
+		right: 6px!important;
+	}
+	.ppc-testimonial-section .splide__arrow{
+		height: 20px!important;
+		width: 20px!important;
+	}
+	.ppc-testimonial-section .kt-testimonial-media-inner-wrap{
+		width: 50px!important;
+	}
+	.ppc-testimonial-section .kt-testimonial-name{
+		font-size: 18px!important;
+	}
+	.ppc-testimonial-section .kt-testimonial-content{
+		font-size: 16px!important;
+	}
+	.discover-image-wrapper{
+		order: 1;
+	}
+	.ppc-faq-section .kt-accordion-panel-inner p , .ppc-faq-section .kt-accordion-panel-inner li{
+		font-size: 14px;
+		line-height: 20px;
 	}
 }
