@@ -162,55 +162,55 @@ body.no-header.no-footer .entry-content-wrap {
   }
 }
 
-/* wellnesswag landing page style */
-.wellnesswag-testimonial-section .kt-testimonial-meta-wrap {
+/* Landing Long Form */
+.landing-long-form .section-testimonials .kt-testimonial-meta-wrap {
   justify-content: flex-end;
 }
-.about-emotional-support-animals-section p a {
+.landing-long-form .section-about-esa p a {
   color: #6c46d6;
 }
-.about-emotional-support-animals-section p a:hover {
+.landing-long-form .section-about-esa p a:hover {
   color: var(--global-palette3);
 }
-.wellnesswag-testimonial-section .kt-testimonial-content {
+.landing-long-form .section-testimonials .kt-testimonial-content {
   text-align: left;
 }
 
-.wellnesswag-testimonial-section .kt-blocks-testimonial-carousel-item {
+.landing-long-form .section-testimonials .kt-blocks-testimonial-carousel-item {
   height: 100%;
 }
 
-.wellnesswag-testimonial-section .kt-testimonial-item-wrap {
+.landing-long-form .section-testimonials .kt-testimonial-item-wrap {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.wellnesswag-testimonial-section .kt-testimonial-meta-wrap {
+.landing-long-form .section-testimonials .kt-testimonial-meta-wrap {
   margin-top: auto;
   padding-top: 10px;
 }
 
-.wellnesswag-testimonial-section .kt-blocks-testimonial-carousel-item {
+.landing-long-form .section-testimonials .kt-blocks-testimonial-carousel-item {
   height: auto;
 }
 
-.wellnesswag-testimonial-section .splide__arrow {
+.landing-long-form .section-testimonials .splide__arrow {
   height: 2rem !important;
   width: 2rem !important;
   border-radius: 50px !important;
   background: var(--global-palette4) !important;
   color: var(--global-palette1) !important;
 }
-.wellnesswag-testimonial-section .splide__arrow--next {
+.landing-long-form .section-testimonials .splide__arrow--next {
   right: -26px !important;
 }
 
-.wellnesswag-testimonial-section .splide__arrow--prev {
+.landing-long-form .section-testimonials .splide__arrow--prev {
   left: -26px !important;
 }
-.wellnesswag-faq-section .kt-accordion-panel-inner p,
-.wellnesswag-faq-section .kt-accordion-panel-inner li {
+.landing-long-form .section-faq .kt-accordion-panel-inner p,
+.landing-long-form .section-faq .kt-accordion-panel-inner li {
   font-size: 20px;
   line-height: 26px;
   font-weight: 400;
@@ -219,91 +219,91 @@ body.no-header.no-footer .entry-content-wrap {
   color: #142c2a !important;
 }
 
-.wellnesswag-faq-section .kt-accordion-panel-inner p,
-.wellnesswag-faq-section .kt-accordion-panel-inner ul {
+.landing-long-form .section-faq .kt-accordion-panel-inner p,
+.landing-long-form .section-faq .kt-accordion-panel-inner ul {
   margin-bottom: 12px;
 }
 
-.wellnesswag-money-back-guarantee-section {
+.landing-long-form .section-moneyback {
   position: relative;
 }
-.wellnesswag-money-back-guarantee-section
-  .wellnesswag-money-back-guarantee-image-wrapper {
+.landing-long-form .section-moneyback
+  .moneyback-image-wrapper {
   position: absolute;
   top: 32px;
   left: -202px;
 }
-.wellnesswag-video-section {
+.landing-long-form .section-video {
   width: 100%;
 }
-.wellnesswag-video-section .mejs-controls {
+.landing-long-form .section-video .mejs-controls {
   display: none;
 }
-.wellnesswag-video-section .wellnesswag-video-wrapper .mejs-overlay-button {
+.landing-long-form .section-video .video-wrapper .mejs-overlay-button {
   background: url("../images/play-button.png");
   background-repeat: no-repeat;
   height: 110px;
   width: 110px;
 }
-.wellnesswag-video-section
-  .wellnesswag-video-wrapper
+.landing-long-form .section-video
+  .video-wrapper
   .mejs-overlay:hover
   > .mejs-overlay-button {
   background-position: unset !important;
 }
 @media screen and (max-width: 1280px) {
-  .wellnesswag-money-back-guarantee-section
-    .wellnesswag-money-back-guarantee-image-wrapper {
+  .landing-long-form .section-moneyback
+    .moneyback-image-wrapper {
     top: 96px;
     max-width: 346px;
     left: -9px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .wellnesswag-video-section .wellnesswag-video-wrapper .mejs-overlay-button {
+  .landing-long-form .section-video .video-wrapper .mejs-overlay-button {
     height: 90px;
     width: 90px;
     background-size: contain;
   }
 }
 @media screen and (max-width: 767px) {
-  .wellnesswag-testimonial-section .splide__arrow--prev {
+  .landing-long-form .section-testimonials .splide__arrow--prev {
     left: 6px !important;
   }
-  .wellnesswag-money-back-guarantee-section
-    .wellnesswag-money-back-guarantee-image-wrapper {
+  .landing-long-form .section-moneyback
+    .moneyback-image-wrapper {
     top: 128px;
     max-width: 170px;
     left: -11px;
   }
-  .wellnesswag-video-section .wellnesswag-video-wrapper .mejs-overlay-button {
+  .landing-long-form .section-video .video-wrapper .mejs-overlay-button {
     height: 60px;
     width: 60px;
   }
-  .wellnesswag-banner-section > .kt-inside-inner-col {
+  .landing-long-form .section-banner > .kt-inside-inner-col {
     background-position: 64%;
   }
-  .wellnesswag-testimonial-section .splide__arrow--next {
+  .landing-long-form .section-testimonials .splide__arrow--next {
     right: 6px !important;
   }
-  .wellnesswag-testimonial-section .splide__arrow {
+  .landing-long-form .section-testimonials .splide__arrow {
     height: 20px !important;
     width: 20px !important;
   }
-  .wellnesswag-testimonial-section .kt-testimonial-media-inner-wrap {
+  .landing-long-form .section-testimonials .kt-testimonial-media-inner-wrap {
     width: 50px !important;
   }
-  .wellnesswag-testimonial-section .kt-testimonial-name {
+  .landing-long-form .section-testimonials .kt-testimonial-name {
     font-size: 18px !important;
   }
-  .wellnesswag-testimonial-section .kt-testimonial-content {
+  .landing-long-form .section-testimonials .kt-testimonial-content {
     font-size: 16px !important;
   }
-  .discover-image-wrapper {
+  .landing-long-form .section-discover .image-wrapper {
     order: 1;
   }
-  .wellnesswag-faq-section .kt-accordion-panel-inner p,
-  .wellnesswag-faq-section .kt-accordion-panel-inner li {
+  .landing-long-form .section-faq .kt-accordion-panel-inner p,
+  .landing-long-form .section-faq .kt-accordion-panel-inner li {
     font-size: 14px;
     line-height: 20px;
   }
