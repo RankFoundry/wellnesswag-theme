@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.8');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.10');
 }
 
 // Define theme directory path
@@ -64,7 +64,7 @@ if ( 'Wellness Wag' === CURRENT_THEME_NAME ) {
 add_filter('auto_update_plugin', '__return_true');
 
 // allow themes to automatically update.
-add_filter('auto_update_theme', '__return_true');
+//add_filter('auto_update_theme', '__return_false');
 
 // allow WP core updates.
 add_filter('allow_minor_auto_core_updates', '__return_true');
