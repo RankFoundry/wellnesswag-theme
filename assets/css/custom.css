@@ -1,302 +1,310 @@
 /* PPC Landing Page (steps) */
-body.no-header.no-footer .entry-content-wrap{
-	padding: 0px;
+body.no-header.no-footer .entry-content-wrap {
+  padding: 0px;
 }
-.work-img-sm-1{
-	display: none;
+.work-img-sm-1 {
+  display: none;
 }
-.work-img-sm-2{
-	display: none;
+.work-img-sm-2 {
+  display: none;
 }
-.how-work-content .kt-blocks-info-box-text{
-	text-align: left;
+.how-work-content .kt-blocks-info-box-text {
+  text-align: left;
 }
-.hiw-box .kt-blocks-info-box-text span{
-	display: inline-block;
-    padding-bottom: 12px;
-	position: relative;
-	padding-left: 20px;
+.hiw-box .kt-blocks-info-box-text span {
+  display: inline-block;
+  padding-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
 }
-.hiw-box .kt-blocks-info-box-text span::before{
-	position: absolute;
-    content: "";
-    background: #000;
-    height: 6px;
-    width: 6px;
-    border-radius: 999px;
-    top: 26%;
-    left: 0px;
+.hiw-box .kt-blocks-info-box-text span::before {
+  position: absolute;
+  content: "";
+  background: #000;
+  height: 6px;
+  width: 6px;
+  border-radius: 999px;
+  top: 26%;
+  left: 0px;
 }
-@media screen and (max-width: 1108px){
-	.ppc-landing-header-title{
-		font-size: 36px!important;
-	}
+@media screen and (max-width: 1108px) {
+  .ppc-landing-header-title {
+    font-size: 36px !important;
+  }
 }
-@media screen and (max-width: 951px){
-	.ppc-landing-header-title {
-		font-size: 24px!important;
-	}
-	.header-title-right-section .kt-inside-inner-col{
-		padding-top: 26px!important;
-	}
+@media screen and (max-width: 951px) {
+  .ppc-landing-header-title {
+    font-size: 24px !important;
+  }
+  .header-title-right-section .kt-inside-inner-col {
+    padding-top: 26px !important;
+  }
 }
-@media screen and (max-width: 767px){
-	.ppc-landing-page-banner-highlights{
-	max-width: 250px;
-}
-	.how-work-content p{
-		font-size: 16px!important;
-		line-height: 20px!important;
-	}
-	.header-title-right-section .sm-mx-auto{
-		margin: 0px auto!important;
-	}
-	.ppc-landing-page-banner-image {
-		display: block;
-		margin: 0px auto;
-		margin-top: 14px!important;
-	}
-	.ppc-landing-page-banner-image figure{
-		margin-right: 0px!important;
-	}
-	.ppc-landing-page-banner-image img{
-		max-width: 100px;
-	}
-	.ppc-landing-page-banner-highlights .kt-inside-inner-col{
-		padding-left: 0px!important;
-    	align-items: flex-start!important;
-	}
-	.header-title-right-section .kt-inside-inner-col{
-		padding-top: 0px!important;
-		padding-bottom: 0px!important;
-    	text-align: center;
-	}
-	.header-title-right-section .banner-title{
-		padding-bottom: 0px!important;
-	}
-	.work-img-sm-2{
-		display: block;
-	}
-	.banner-image-left-section img{
-		width:100%;
-	}
-	.work-img-2{
-		position: absolute;
-		top: 29%;
+@media screen and (max-width: 767px) {
+  .ppc-landing-page-banner-highlights {
+    max-width: 250px;
+  }
+  .how-work-content p {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .header-title-right-section .sm-mx-auto {
+    margin: 0px auto !important;
+  }
+  .ppc-landing-page-banner-image {
+    display: block;
+    margin: 0px auto;
+    margin-top: 14px !important;
+  }
+  .ppc-landing-page-banner-image figure {
+    margin-right: 0px !important;
+  }
+  .ppc-landing-page-banner-image img {
+    max-width: 100px;
+  }
+  .ppc-landing-page-banner-highlights .kt-inside-inner-col {
+    padding-left: 0px !important;
+    align-items: flex-start !important;
+  }
+  .header-title-right-section .kt-inside-inner-col {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    text-align: center;
+  }
+  .header-title-right-section .banner-title {
+    padding-bottom: 0px !important;
+  }
+  .work-img-sm-2 {
+    display: block;
+  }
+  .banner-image-left-section img {
+    width: 100%;
+  }
+  .work-img-2 {
+    position: absolute;
+    top: 29%;
     transform: translate(-50%, -115%);
     left: 114px;
-		z-index: -1;
-	}
-	.banner-image-left-section figure{
-		width:100%;
-	}
-	.work-second-child{
-		margin-left: auto;
-	}
-	.how-work-content{
-		max-width: 355px;
+    z-index: -1;
+  }
+  .banner-image-left-section figure {
+    width: 100%;
+  }
+  .work-second-child {
+    margin-left: auto;
+  }
+  .how-work-content {
+    max-width: 355px;
     display: flex;
-	}
-	.how-work-content .kt-row-column-wrap{
-		width:100%;
-	}
-	.how-work-content > .wp-block-kadence-column{
-		z-index: 2!important;
-	}
-	.banner-btn{
-		justify-content: center!important;
-	}
-	.ppc-landing-page-how-its-work .kt-inside-inner-col{
-		    justify-content: center;
+  }
+  .how-work-content .kt-row-column-wrap {
+    width: 100%;
+  }
+  .how-work-content > .wp-block-kadence-column {
+    z-index: 2 !important;
+  }
+  .banner-btn {
+    justify-content: center !important;
+  }
+  .ppc-landing-page-how-its-work .kt-inside-inner-col {
+    justify-content: center;
     align-items: center;
-	}
-	.ppc-landing-page-how-its-work .how-work-content{
-		width: 100%;
-	}
-	.work-img-1{
-			position: absolute;
-		top: -133%;
-		transform: translate(-50%, -50%);
-		right: -64px;
-		}
-	.ppc-landing-page-how-its-work .kt-blocks-info-box-media{
-		padding-bottom: 0px;
-	}
-	.ppc-landing-page-how-its-work .kadence-info-box-image-inner-intrisic-container{
-		max-width: 50px!important;
+  }
+  .ppc-landing-page-how-its-work .how-work-content {
+    width: 100%;
+  }
+  .work-img-1 {
+    position: absolute;
+    top: -133%;
+    transform: translate(-50%, -50%);
+    right: -64px;
+  }
+  .ppc-landing-page-how-its-work .kt-blocks-info-box-media {
     padding-bottom: 0px;
-	}
-	.ppc-landing-page-how-its-work .wp-block-kadence-infobox{
-	 max-width: 224px;
-	}
-	.ppc-landing-page-how-its-work .work-img-1{
-		display: none;
-	}
-	.ppc-landing-page-how-its-work .work-img-2{
-		display: none;
-	}
-	.ppc-landing-page-faq-section .kt-accordion-panel-inner h5{
-		line-height: 20px!important;
-		font-size: 15px!important;
-	}
-	.ppc-landing-page-faq-section ul li{
-		line-height: 20px!important;
-		font-size: 15px!important;
-	}
-	
-	.ppc-landing-page-faq-section ul{
-		padding-left: 18px!important;
-	}
-	.ppc-landing-page-logo-section img{
-		max-width: 162px;
-	}
-	.work-img-sm-1{
-		display: block;
-	}
+  }
+  .ppc-landing-page-how-its-work
+    .kadence-info-box-image-inner-intrisic-container {
+    max-width: 50px !important;
+    padding-bottom: 0px;
+  }
+  .ppc-landing-page-how-its-work .wp-block-kadence-infobox {
+    max-width: 224px;
+  }
+  .ppc-landing-page-how-its-work .work-img-1 {
+    display: none;
+  }
+  .ppc-landing-page-how-its-work .work-img-2 {
+    display: none;
+  }
+  .ppc-landing-page-faq-section .kt-accordion-panel-inner h5 {
+    line-height: 20px !important;
+    font-size: 15px !important;
+  }
+  .ppc-landing-page-faq-section ul li {
+    line-height: 20px !important;
+    font-size: 15px !important;
+  }
+
+  .ppc-landing-page-faq-section ul {
+    padding-left: 18px !important;
+  }
+  .ppc-landing-page-logo-section img {
+    max-width: 162px;
+  }
+  .work-img-sm-1 {
+    display: block;
+  }
 }
 
-@media screen and (max-width: 576px){
-    .header-title-right-section .kt-inside-inner-col{
-		padding-left:0px!important;
-	}
+@media screen and (max-width: 576px) {
+  .header-title-right-section .kt-inside-inner-col {
+    padding-left: 0px !important;
+  }
 }
 
-
-
-
-/* ppc landing page style */
-.ppc-testimonial-section .kt-testimonial-meta-wrap{
-	justify-content: flex-end;
+/* wellnesswag landing page style */
+.wellnesswag-testimonial-section .kt-testimonial-meta-wrap {
+  justify-content: flex-end;
 }
-.ppc-about-emotional-support-animals-section p a{
-	color: #6C46D6;
+.about-emotional-support-animals-section p a {
+  color: #6c46d6;
 }
-.ppc-about-emotional-support-animals-section p a:hover{
-	color: var(--global-palette3);
+.about-emotional-support-animals-section p a:hover {
+  color: var(--global-palette3);
 }
-.ppc-testimonial-section .kt-testimonial-content{
-	text-align: left;
+.wellnesswag-testimonial-section .kt-testimonial-content {
+  text-align: left;
 }
 
-.ppc-testimonial-section .kt-blocks-testimonial-carousel-item{
-	height: 100%;
+.wellnesswag-testimonial-section .kt-blocks-testimonial-carousel-item {
+  height: 100%;
 }
 
-.ppc-testimonial-section .kt-testimonial-item-wrap{
-	height: 100%;
-    display: flex;
-    flex-direction: column;
+.wellnesswag-testimonial-section .kt-testimonial-item-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.ppc-testimonial-section .kt-testimonial-meta-wrap{
-	margin-top: auto;
-	padding-top:10px;
+.wellnesswag-testimonial-section .kt-testimonial-meta-wrap {
+  margin-top: auto;
+  padding-top: 10px;
 }
 
-.ppc-testimonial-section .kt-blocks-testimonial-carousel-item {
-	height: auto;
+.wellnesswag-testimonial-section .kt-blocks-testimonial-carousel-item {
+  height: auto;
 }
 
-.ppc-testimonial-section .splide__arrow{
-	height: 2rem!important;
-	width: 2rem!important;
-	border-radius: 50px!important;
-	background: var(--global-palette4)!important;
-	color: var(--global-palette1)!important;
+.wellnesswag-testimonial-section .splide__arrow {
+  height: 2rem !important;
+  width: 2rem !important;
+  border-radius: 50px !important;
+  background: var(--global-palette4) !important;
+  color: var(--global-palette1) !important;
 }
-.ppc-testimonial-section .splide__arrow--next{
-	right: -26px!important;
-}
-
-.ppc-testimonial-section .splide__arrow--prev{
-	left: -26px!important;
-}
-.ppc-faq-section .kt-accordion-panel-inner p , .ppc-faq-section .kt-accordion-panel-inner li{
-    font-size: 20px;
-    line-height: 26px;
-    font-weight: 400;
-    font-family: Lato;
-    text-transform: capitalize;
-	color: #142c2a!important;
+.wellnesswag-testimonial-section .splide__arrow--next {
+  right: -26px !important;
 }
 
-.ppc-faq-section .kt-accordion-panel-inner p , .ppc-faq-section .kt-accordion-panel-inner ul{
-	margin-bottom:12px;
+.wellnesswag-testimonial-section .splide__arrow--prev {
+  left: -26px !important;
 }
-.ppc-money-back-guarantee-section{
-	position: relative;
+.wellnesswag-faq-section .kt-accordion-panel-inner p,
+.wellnesswag-faq-section .kt-accordion-panel-inner li {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: Lato;
+  text-transform: capitalize;
+  color: #142c2a !important;
 }
-.ppc-money-back-guarantee-section .ppc-money-back-guarantee-image-wrapper{
-	  position: absolute;
-    top: 32px;
-    left: -202px;
+
+.wellnesswag-faq-section .kt-accordion-panel-inner p,
+.wellnesswag-faq-section .kt-accordion-panel-inner ul {
+  margin-bottom: 12px;
 }
-.ppc-video-section{
-	width: 100%;
+
+.wellnesswag-money-back-guarantee-section {
+  position: relative;
 }
-.ppc-video-section .mejs-controls{
-	display: none;
+.wellnesswag-money-back-guarantee-section
+  .wellnesswag-money-back-guarantee-image-wrapper {
+  position: absolute;
+  top: 32px;
+  left: -202px;
 }
-.ppc-video-section .ppc-video-wrapper .mejs-overlay-button{
-  background: url('../images/play-button.png');
+.wellnesswag-video-section {
+  width: 100%;
+}
+.wellnesswag-video-section .mejs-controls {
+  display: none;
+}
+.wellnesswag-video-section .wellnesswag-video-wrapper .mejs-overlay-button {
+  background: url("../images/play-button.png");
   background-repeat: no-repeat;
   height: 110px;
   width: 110px;
 }
-.ppc-video-section .ppc-video-wrapper .mejs-overlay:hover>.mejs-overlay-button{
-	background-position: unset!important;
+.wellnesswag-video-section
+  .wellnesswag-video-wrapper
+  .mejs-overlay:hover
+  > .mejs-overlay-button {
+  background-position: unset !important;
 }
-@media screen and (max-width: 1280px){
-	.ppc-money-back-guarantee-section .ppc-money-back-guarantee-image-wrapper {
+@media screen and (max-width: 1280px) {
+  .wellnesswag-money-back-guarantee-section
+    .wellnesswag-money-back-guarantee-image-wrapper {
     top: 96px;
     max-width: 346px;
     left: -9px;
+  }
 }
+@media screen and (max-width: 1024px) {
+  .wellnesswag-video-section .wellnesswag-video-wrapper .mejs-overlay-button {
+    height: 90px;
+    width: 90px;
+    background-size: contain;
+  }
 }
-@media screen and (max-width: 1024px){
-	.ppc-video-section .ppc-video-wrapper .mejs-overlay-button{
-		height: 90px;
-		width: 90px;
-		background-size: contain;
-	}
-}
-@media screen and (max-width: 767px){
-	.ppc-testimonial-section .splide__arrow--prev {
-		left: 6px !important;
-	}
-	.ppc-money-back-guarantee-section .ppc-money-back-guarantee-image-wrapper {
+@media screen and (max-width: 767px) {
+  .wellnesswag-testimonial-section .splide__arrow--prev {
+    left: 6px !important;
+  }
+  .wellnesswag-money-back-guarantee-section
+    .wellnesswag-money-back-guarantee-image-wrapper {
     top: 128px;
     max-width: 170px;
     left: -11px;
-}
-	.ppc-video-section .ppc-video-wrapper .mejs-overlay-button{
-		height: 60px;
-		width: 60px;
-	}
-	.ppc-banner-section > .kt-inside-inner-col{
-	background-position: 64%;
-}
-	.ppc-testimonial-section .splide__arrow--next{
-		right: 6px!important;
-	}
-	.ppc-testimonial-section .splide__arrow{
-		height: 20px!important;
-		width: 20px!important;
-	}
-	.ppc-testimonial-section .kt-testimonial-media-inner-wrap{
-		width: 50px!important;
-	}
-	.ppc-testimonial-section .kt-testimonial-name{
-		font-size: 18px!important;
-	}
-	.ppc-testimonial-section .kt-testimonial-content{
-		font-size: 16px!important;
-	}
-	.discover-image-wrapper{
-		order: 1;
-	}
-	.ppc-faq-section .kt-accordion-panel-inner p , .ppc-faq-section .kt-accordion-panel-inner li{
-		font-size: 14px;
-		line-height: 20px;
-	}
+  }
+  .wellnesswag-video-section .wellnesswag-video-wrapper .mejs-overlay-button {
+    height: 60px;
+    width: 60px;
+  }
+  .wellnesswag-banner-section > .kt-inside-inner-col {
+    background-position: 64%;
+  }
+  .wellnesswag-testimonial-section .splide__arrow--next {
+    right: 6px !important;
+  }
+  .wellnesswag-testimonial-section .splide__arrow {
+    height: 20px !important;
+    width: 20px !important;
+  }
+  .wellnesswag-testimonial-section .kt-testimonial-media-inner-wrap {
+    width: 50px !important;
+  }
+  .wellnesswag-testimonial-section .kt-testimonial-name {
+    font-size: 18px !important;
+  }
+  .wellnesswag-testimonial-section .kt-testimonial-content {
+    font-size: 16px !important;
+  }
+  .discover-image-wrapper {
+    order: 1;
+  }
+  .wellnesswag-faq-section .kt-accordion-panel-inner p,
+  .wellnesswag-faq-section .kt-accordion-panel-inner li {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
