@@ -185,7 +185,6 @@ body.no-header.no-footer .entry-content-wrap {
   display: flex;
   flex-direction: column;
 }
-
 .landing-long-form .section-testimonials .kt-testimonial-meta-wrap {
   margin-top: auto;
   padding-top: 10px;
@@ -238,6 +237,12 @@ body.no-header.no-footer .entry-content-wrap {
 }
 .landing-long-form .section-video .mejs-controls {
   display: none;
+}
+.landing-long-form .section-video .video-wrapper{
+  width: 100%;
+}
+.landing-long-form .section-video .video-wrapper .wp-block-kadence-column{
+  width: 100%;
 }
 .landing-long-form .section-video .video-wrapper .mejs-overlay-button {
   background: url("../images/play-button.png");
@@ -307,4 +312,7 @@ body.no-header.no-footer .entry-content-wrap {
     font-size: 14px;
     line-height: 20px;
   }
+  .landing-long-form .section-video .wp-block-kadence-column{
+    width: 100%;
+}
 }
