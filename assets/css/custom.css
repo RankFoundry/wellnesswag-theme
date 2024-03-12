@@ -163,6 +163,10 @@ body.no-header.no-footer .entry-content-wrap {
 }
 
 /* Landing Long Form */
+.landing-long-form{
+  padding-right: 0px!important;
+  padding-left: 0px!important;
+} 
 .landing-long-form .section-testimonials .kt-testimonial-meta-wrap {
   justify-content: flex-end;
 }
@@ -272,10 +276,6 @@ body.no-header.no-footer .entry-content-wrap {
   }
 }
 @media screen and (max-width: 767px) {
-  .landing-long-form {
-	padding-right: 0px;
-	padding-left: 0px;
-  }
   .landing-long-form .section-testimonials .splide__arrow--prev {
     left: 6px !important;
   }
