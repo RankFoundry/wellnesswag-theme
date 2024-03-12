@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.11');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.13');
 }
 
 // Define theme directory path
