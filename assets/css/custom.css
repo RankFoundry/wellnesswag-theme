@@ -1,3 +1,20 @@
+/* Payments Hover */
+.tip {
+  position: relative;
+}
+
+.tip h3 {
+  cursor: help;
+}
+.tipBox {
+  display: none;
+  transition: 0.2s ease;
+}
+.tip:hover + .tipBox{
+	display: block;
+}
+
+
 /* Landing Long Form */
 .landing-long-form{
   padding-right: 0px!important;
