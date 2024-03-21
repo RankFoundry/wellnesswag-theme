@@ -10,16 +10,15 @@
   display: none;
   transition: 0.2s ease;
 }
-.tip:hover + .tipBox{
-	display: block;
+.tip:hover + .tipBox {
+  display: block;
 }
 
-
 /* Landing Long Form */
-.landing-long-form{
-  padding-right: 0px!important;
-  padding-left: 0px!important;
-} 
+.landing-long-form {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
 .landing-long-form .section-testimonials .kt-testimonial-meta-wrap {
   justify-content: flex-end;
 }
@@ -83,8 +82,7 @@
 .landing-long-form .section-moneyback {
   position: relative;
 }
-.landing-long-form .section-moneyback
-  .moneyback-image-wrapper {
+.landing-long-form .section-moneyback .moneyback-image-wrapper {
   position: absolute;
   top: 32px;
   left: -202px;
@@ -95,10 +93,10 @@
 .landing-long-form .section-video .mejs-controls {
   display: none;
 }
-.landing-long-form .section-video .video-wrapper{
+.landing-long-form .section-video .video-wrapper {
   width: 100%;
 }
-.landing-long-form .section-video .video-wrapper .wp-block-kadence-column{
+.landing-long-form .section-video .video-wrapper .wp-block-kadence-column {
   width: 100%;
 }
 .landing-long-form .section-video .video-wrapper .mejs-overlay-button {
@@ -107,15 +105,15 @@
   height: 110px;
   width: 110px;
 }
-.landing-long-form .section-video
+.landing-long-form
+  .section-video
   .video-wrapper
   .mejs-overlay:hover
   > .mejs-overlay-button {
   background-position: unset !important;
 }
 @media screen and (max-width: 1280px) {
-  .landing-long-form .section-moneyback
-    .moneyback-image-wrapper {
+  .landing-long-form .section-moneyback .moneyback-image-wrapper {
     top: 96px;
     max-width: 346px;
     left: -9px;
@@ -132,8 +130,7 @@
   .landing-long-form .section-testimonials .splide__arrow--prev {
     left: 6px !important;
   }
-  .landing-long-form .section-moneyback
-    .moneyback-image-wrapper {
+  .landing-long-form .section-moneyback .moneyback-image-wrapper {
     top: 128px;
     max-width: 170px;
     left: -11px;
@@ -169,14 +166,39 @@
     font-size: 14px;
     line-height: 20px;
   }
-  .landing-long-form .section-video .wp-block-kadence-column{
+  .landing-long-form .section-video .wp-block-kadence-column {
     width: 100%;
-}
+  }
 }
 
 /* Landing short form */
 body.no-header.no-footer .entry-content-wrap {
   padding: 0px;
+}
+.landing-short-form .intro-header .kt-inside-inner-col span {
+  display: inline-block;
+}
+.landing-short-form .section-get-started {
+  position: relative;
+}
+.landing-short-form .section-get-started::after,
+.landing-short-form .section-get-started::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: #eaf5eb;
+  max-width: 658px;
+  margin: 0 auto;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+.landing-short-form .section-get-started::before {
+  top: -5px;
+}
+.landing-short-form .section-get-started::after {
+  bottom: -5px;
 }
 
 .landing-short-form .top-arrow-desktop {
@@ -207,7 +229,10 @@ body.no-header.no-footer .entry-content-wrap {
   top: 26%;
   left: 0px;
 }
-.landing-short-form .how-work-content>.kt-has-2-columns>.wp-block-kadence-column {
+.landing-short-form
+  .how-work-content
+  > .kt-has-2-columns
+  > .wp-block-kadence-column {
   z-index: unset;
 }
 .landing-short-form .bottom-arrow-desktop {
@@ -224,113 +249,122 @@ body.no-header.no-footer .entry-content-wrap {
 
 @media screen and (max-width: 1108px) {
   .landing-short-form .highlight-title {
-     font-size: 36px !important;
-   }
- }
- @media screen and (max-width: 951px) {
-   .landing-short-form .highlight-title {
-     font-size: 24px !important;
-   }
-   .landing-short-form .section-money-back .kt-inside-inner-col {
-     padding-top: 26px !important;
-   }
- }
- @media screen and (max-width: 767px) {
-   .landing-short-form .highlight-box {
-     max-width: 250px;
-   }
-   .landing-short-form .how-work-content p {
-     font-size: 16px !important;
-     line-height: 20px !important;
-   }
-   .landing-short-form .section-money-back .sm-mx-auto {
-     margin: 0px auto !important;
-   }
-   .landing-short-form .money-back-icon {
-     display: block;
-     margin: 0px auto;
-     margin-top: 14px !important;
-   }
-   .landing-short-form .money-back-icon figure {
-     margin-right: 0px !important;
-   }
-   .landing-short-form .money-back-icon img {
-     max-width: 100px;
-   }
-   .landing-short-form .highlight-box .kt-inside-inner-col {
-     padding-left: 0px !important;
-     align-items: flex-start !important;
-   }
-   .landing-short-form .section-money-back .kt-inside-inner-col {
-     padding-top: 0px !important;
-     padding-bottom: 0px !important;
-     text-align: center;
-   }
-   .landing-short-form .section-money-back .banner-title {
-     padding-bottom: 0px !important;
-   }
-   .landing-short-form .doctor-image img {
-     width: 100%;
-   }
-   .landing-short-form .doctor-image figure {
-     width: 100%;
-   }
-   .landing-short-form .work-second-child {
-     margin-left: auto;
-   }
-   .landing-short-form .how-work-content {
-     max-width: 355px;
-     display: flex;
-   }
-   .landing-short-form .how-work-content .kt-row-column-wrap {
-     width: 100%;
-   }
-   .landing-short-form .how-work-content > .wp-block-kadence-column {
-     z-index: 2 !important;
-   }
-   .landing-short-form .banner-btn {
-     justify-content: center !important;
-   }
-   .landing-short-form .section-how-it-works .kt-inside-inner-col {
-     justify-content: center;
-     align-items: center;
-   }
-   .landing-short-form .section-how-it-works .how-work-content {
-     width: 100%;
-   }
-   .landing-short-form .section-how-it-works .kt-blocks-info-box-media {
-     padding-bottom: 0px;
-   }
-   .landing-short-form .section-how-it-works .kadence-info-box-image-inner-intrisic-container {
-     max-width: 50px !important;
-     padding-bottom: 0px;
-   }
-   .landing-short-form .section-how-it-works .wp-block-kadence-infobox {
-     max-width: 224px;
-   }
-   .landing-short-form .section-faq ul li {
-     line-height: 20px !important;
-     font-size: 15px !important;
-   }
-   .landing-short-form .section-faq ul {
-     padding-left: 18px !important;
-   }
-   .landing-short-form .top-arrow-mobile {
-     position: absolute !important;
-     transform: translate(23%, -88%);
-     left: 58%;
-   }
-   .landing-short-form .bottom-arrow-mobile {
-       position: absolute !important;
-       transform: translate(-50%, 42%);
-       top: 84%;
-       left: 25%;
-   }
+    font-size: 36px !important;
+  }
+}
+@media screen and (max-width: 951px) {
+  .landing-short-form .highlight-title {
+    font-size: 24px !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .landing-short-form .highlight-box {
+    max-width: 250px;
+  }
+  .landing-short-form .how-work-content p {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .landing-short-form .section-money-back .sm-mx-auto {
+    margin: 0px auto !important;
+  }
+  .landing-short-form .money-back-icon {
+    display: block;
+    margin: 0px auto;
+    margin-top: 14px !important;
+  }
+  .landing-short-form .money-back-icon figure {
+    margin-right: 0px !important;
+  }
+  .landing-short-form .money-back-icon img {
+    max-width: 100px;
+  }
+  .landing-short-form .highlight-box .kt-inside-inner-col {
+    padding-left: 0px !important;
+    align-items: flex-start !important;
+  }
+  .landing-short-form .section-money-back .kt-inside-inner-col {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    text-align: center;
+  }
+  .landing-short-form .section-money-back .banner-title {
+    padding-bottom: 0px !important;
+  }
+  .landing-short-form .doctor-image img {
+    width: 100%;
+  }
+  .landing-short-form .doctor-image figure {
+    width: 100%;
+  }
+  .landing-short-form .work-second-child {
+    margin-left: auto;
+  }
+  .landing-short-form .how-work-content {
+    max-width: 355px;
+    display: flex;
+  }
+  .landing-short-form .how-work-content .kt-row-column-wrap {
+    width: 100%;
+  }
+  .landing-short-form .how-work-content > .wp-block-kadence-column {
+    z-index: 2 !important;
+  }
+  .landing-short-form .banner-btn {
+    justify-content: center !important;
+  }
+  .landing-short-form .section-how-it-works .kt-inside-inner-col {
+    justify-content: center;
+    align-items: center;
+  }
+  .landing-short-form .section-how-it-works .how-work-content {
+    width: 100%;
+  }
+  .landing-short-form .section-how-it-works .kt-blocks-info-box-media {
+    padding-bottom: 0px;
+  }
+  .landing-short-form
+    .section-how-it-works
+    .kadence-info-box-image-inner-intrisic-container {
+    max-width: 50px !important;
+    padding-bottom: 0px;
+  }
+  .landing-short-form .section-how-it-works .wp-block-kadence-infobox {
+    max-width: 224px;
+  }
+  .landing-short-form .section-faq ul li {
+    line-height: 20px !important;
+    font-size: 15px !important;
+  }
+  .landing-short-form .section-faq ul {
+    padding-left: 18px !important;
+  }
+  .landing-short-form .top-arrow-mobile {
+    position: absolute !important;
+    transform: translate(23%, -88%);
+    left: 58%;
+  }
+  .landing-short-form .bottom-arrow-mobile {
+    position: absolute !important;
+    transform: translate(-50%, 42%);
+    top: 84%;
+    left: 25%;
+  }
+  .landing-short-form .section-get-started .kt-inside-inner-col {
+    background-color: transparent !important;
+  }
+  .landing-short-form .section-get-started::after,
+  .landing-short-form .section-get-started::before {
+    display: none;
+  }
+  .landing-short-form .banner-btn {
+    max-width: 186px;
+    margin: auto;
+  }
+}
 
- }
-
- @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .landing-short-form .section-money-back .kt-inside-inner-col {
     padding-left: 0px !important;
   }
-} 
+}
