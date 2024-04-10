@@ -84,6 +84,13 @@ function wellness_wag_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'wellness_wag_enqueue_styles' ); 
 
+function wellness_wag_enqueue_script() {
+	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array(), WELLNESS_WAG_THEME_VERSION );
+	wp_enqueue_script( 'wwbot-helper', get_stylesheet_directory_uri() . '/assets/js/wwbot-helper.js', array(), WELLNESS_WAG_THEME_VERSION );
+}
+add_action( 'wp_enqueue_scripts', 'wellness_wag_enqueue_script' ); 
+
+
 // Remove trailing slash from pagination links
 add_filter('paginate_links','untrailingslashit');
 add_filter( 'get_pagenum_link', 'untrailingslashit');
@@ -166,4 +173,5 @@ function custom_quill_scripts() {
 	wp_add_inline_script('jquery', $inline_script); // This adds your script after jQuery
 }
 add_action( 'wp_enqueue_scripts', 'custom_quill_scripts' ); 
+
 
