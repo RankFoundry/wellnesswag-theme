@@ -534,8 +534,8 @@ body.no-header.no-footer .entry-content-wrap {
 .chat-bot .section-brand-logo .brand-logo img {
   opacity: 0.4;
 }
-.chat-bot .brand-logo-wrapper > .kt-inside-inner-col{
-   opacity: 0.6;
+.chat-bot .brand-logo-wrapper > .kt-inside-inner-col {
+  opacity: 0.6;
 }
 .chat-bot-info-button .kt-row-column-wrap {
   grid-template-columns: minmax(0, 84px) minmax(0, 2fr) !important;
@@ -557,7 +557,7 @@ body.no-header.no-footer .entry-content-wrap {
   }
   .chat-bot .section-banner {
     width: calc(100% - 477px);
-}
+  }
 }
 @media screen and (max-width: 1024px) {
   .chat-bot .section-video .video-wrapper .mejs-overlay-button {
@@ -581,7 +581,7 @@ body.no-header.no-footer .entry-content-wrap {
   }
   .chat-bot .section-banner {
     width: calc(100% - 431px);
-}
+  }
 }
 @media screen and (max-width: 886px) {
   .chat-bot-main {
@@ -592,7 +592,7 @@ body.no-header.no-footer .entry-content-wrap {
   }
   .chat-bot .section-banner {
     width: calc(100% - 387px);
-}
+  }
 }
 @media screen and (max-width: 767px) {
   .chat-bot .section-banner {
@@ -681,10 +681,46 @@ body.no-header.no-footer .entry-content-wrap {
     gap: 10px;
     grid-template-columns: 142px 1fr;
   }
-  .chat-bot .experience-process-wrapper .wp-block-kadence-advancedheading{
+  .chat-bot .experience-process-wrapper .wp-block-kadence-advancedheading {
     width: 100%;
   }
   .chat-bot .experience-process-wrapper .wp-block-kadence-advancedheading {
     text-align: center !important;
   }
 }
+
+.landing-long-form .medical-care-team-card .kt-inside-inner-col {
+  overflow: hidden;
+}
+
+.landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+  width: 390px !important;
+}
+
+.landing-long-form .section-medical-care-team .medical-rating > .kt-row-column-wrap{
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.landing-long-form .brand-logo-wrapper > .kt-inside-inner-col {
+  opacity: 0.6;
+}
+
+.landing-long-form .brand-logo-wrapper{
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 100% !important;
+  }
+}
+
