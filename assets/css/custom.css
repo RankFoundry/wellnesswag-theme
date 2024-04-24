@@ -10,16 +10,15 @@
   display: none;
   transition: 0.2s ease;
 }
-.tip:hover + .tipBox{
-	display: block;
+.tip:hover + .tipBox {
+  display: block;
 }
 
-
 /* Landing Long Form */
-.landing-long-form{
-  padding-right: 0px!important;
-  padding-left: 0px!important;
-} 
+.landing-long-form {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
 .landing-long-form .section-testimonials .kt-testimonial-meta-wrap {
   justify-content: flex-end;
 }
@@ -83,8 +82,7 @@
 .landing-long-form .section-moneyback {
   position: relative;
 }
-.landing-long-form .section-moneyback
-  .moneyback-image-wrapper {
+.landing-long-form .section-moneyback .moneyback-image-wrapper {
   position: absolute;
   top: 32px;
   left: -202px;
@@ -95,10 +93,10 @@
 .landing-long-form .section-video .mejs-controls {
   display: none;
 }
-.landing-long-form .section-video .video-wrapper{
+.landing-long-form .section-video .video-wrapper {
   width: 100%;
 }
-.landing-long-form .section-video .video-wrapper .wp-block-kadence-column{
+.landing-long-form .section-video .video-wrapper .wp-block-kadence-column {
   width: 100%;
 }
 .landing-long-form .section-video .video-wrapper .mejs-overlay-button {
@@ -107,15 +105,15 @@
   height: 110px;
   width: 110px;
 }
-.landing-long-form .section-video
+.landing-long-form
+  .section-video
   .video-wrapper
   .mejs-overlay:hover
   > .mejs-overlay-button {
   background-position: unset !important;
 }
 @media screen and (max-width: 1280px) {
-  .landing-long-form .section-moneyback
-    .moneyback-image-wrapper {
+  .landing-long-form .section-moneyback .moneyback-image-wrapper {
     top: 96px;
     max-width: 346px;
     left: -9px;
@@ -132,8 +130,7 @@
   .landing-long-form .section-testimonials .splide__arrow--prev {
     left: 6px !important;
   }
-  .landing-long-form .section-moneyback
-    .moneyback-image-wrapper {
+  .landing-long-form .section-moneyback .moneyback-image-wrapper {
     top: 128px;
     max-width: 170px;
     left: -11px;
@@ -169,14 +166,39 @@
     font-size: 14px;
     line-height: 20px;
   }
-  .landing-long-form .section-video .wp-block-kadence-column{
+  .landing-long-form .section-video .wp-block-kadence-column {
     width: 100%;
-}
+  }
 }
 
 /* Landing short form */
 body.no-header.no-footer .entry-content-wrap {
   padding: 0px;
+}
+.landing-short-form .intro-header .kt-inside-inner-col span {
+  display: inline-block;
+}
+.landing-short-form .section-get-started {
+  position: relative;
+}
+.landing-short-form .section-get-started::after,
+.landing-short-form .section-get-started::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: #eaf5eb;
+  max-width: 658px;
+  margin: 0 auto;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+.landing-short-form .section-get-started::before {
+  top: -5px;
+}
+.landing-short-form .section-get-started::after {
+  bottom: -5px;
 }
 
 .landing-short-form .top-arrow-desktop {
@@ -207,7 +229,10 @@ body.no-header.no-footer .entry-content-wrap {
   top: 26%;
   left: 0px;
 }
-.landing-short-form .how-work-content>.kt-has-2-columns>.wp-block-kadence-column {
+.landing-short-form
+  .how-work-content
+  > .kt-has-2-columns
+  > .wp-block-kadence-column {
   z-index: unset;
 }
 .landing-short-form .bottom-arrow-desktop {
@@ -224,113 +249,494 @@ body.no-header.no-footer .entry-content-wrap {
 
 @media screen and (max-width: 1108px) {
   .landing-short-form .highlight-title {
-     font-size: 36px !important;
-   }
- }
- @media screen and (max-width: 951px) {
-   .landing-short-form .highlight-title {
-     font-size: 24px !important;
-   }
-   .landing-short-form .section-money-back .kt-inside-inner-col {
-     padding-top: 26px !important;
-   }
- }
- @media screen and (max-width: 767px) {
-   .landing-short-form .highlight-box {
-     max-width: 250px;
-   }
-   .landing-short-form .how-work-content p {
-     font-size: 16px !important;
-     line-height: 20px !important;
-   }
-   .landing-short-form .section-money-back .sm-mx-auto {
-     margin: 0px auto !important;
-   }
-   .landing-short-form .money-back-icon {
-     display: block;
-     margin: 0px auto;
-     margin-top: 14px !important;
-   }
-   .landing-short-form .money-back-icon figure {
-     margin-right: 0px !important;
-   }
-   .landing-short-form .money-back-icon img {
-     max-width: 100px;
-   }
-   .landing-short-form .highlight-box .kt-inside-inner-col {
-     padding-left: 0px !important;
-     align-items: flex-start !important;
-   }
-   .landing-short-form .section-money-back .kt-inside-inner-col {
-     padding-top: 0px !important;
-     padding-bottom: 0px !important;
-     text-align: center;
-   }
-   .landing-short-form .section-money-back .banner-title {
-     padding-bottom: 0px !important;
-   }
-   .landing-short-form .doctor-image img {
-     width: 100%;
-   }
-   .landing-short-form .doctor-image figure {
-     width: 100%;
-   }
-   .landing-short-form .work-second-child {
-     margin-left: auto;
-   }
-   .landing-short-form .how-work-content {
-     max-width: 355px;
-     display: flex;
-   }
-   .landing-short-form .how-work-content .kt-row-column-wrap {
-     width: 100%;
-   }
-   .landing-short-form .how-work-content > .wp-block-kadence-column {
-     z-index: 2 !important;
-   }
-   .landing-short-form .banner-btn {
-     justify-content: center !important;
-   }
-   .landing-short-form .section-how-it-works .kt-inside-inner-col {
-     justify-content: center;
-     align-items: center;
-   }
-   .landing-short-form .section-how-it-works .how-work-content {
-     width: 100%;
-   }
-   .landing-short-form .section-how-it-works .kt-blocks-info-box-media {
-     padding-bottom: 0px;
-   }
-   .landing-short-form .section-how-it-works .kadence-info-box-image-inner-intrisic-container {
-     max-width: 50px !important;
-     padding-bottom: 0px;
-   }
-   .landing-short-form .section-how-it-works .wp-block-kadence-infobox {
-     max-width: 224px;
-   }
-   .landing-short-form .section-faq ul li {
-     line-height: 20px !important;
-     font-size: 15px !important;
-   }
-   .landing-short-form .section-faq ul {
-     padding-left: 18px !important;
-   }
-   .landing-short-form .top-arrow-mobile {
-     position: absolute !important;
-     transform: translate(23%, -88%);
-     left: 58%;
-   }
-   .landing-short-form .bottom-arrow-mobile {
-       position: absolute !important;
-       transform: translate(-50%, 42%);
-       top: 84%;
-       left: 25%;
-   }
+    font-size: 36px !important;
+  }
+}
+@media screen and (max-width: 951px) {
+  .landing-short-form .highlight-title {
+    font-size: 24px !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .landing-short-form .highlight-box {
+    max-width: 250px;
+  }
+  .landing-short-form .how-work-content p {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .landing-short-form .section-money-back .sm-mx-auto {
+    margin: 0px auto !important;
+  }
+  .landing-short-form .money-back-icon {
+    display: block;
+    margin: 0px auto;
+    margin-top: 14px !important;
+  }
+  .landing-short-form .money-back-icon figure {
+    margin-right: 0px !important;
+  }
+  .landing-short-form .money-back-icon img {
+    max-width: 100px;
+  }
+  .landing-short-form .highlight-box .kt-inside-inner-col {
+    padding-left: 0px !important;
+    align-items: flex-start !important;
+  }
+  .landing-short-form .section-money-back .kt-inside-inner-col {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    text-align: center;
+  }
+  .landing-short-form .section-money-back .banner-title {
+    padding-bottom: 0px !important;
+  }
+  .landing-short-form .doctor-image img {
+    width: 100%;
+  }
+  .landing-short-form .doctor-image figure {
+    width: 100%;
+  }
+  .landing-short-form .work-second-child {
+    margin-left: auto;
+  }
+  .landing-short-form .how-work-content {
+    max-width: 355px;
+    display: flex;
+  }
+  .landing-short-form .how-work-content .kt-row-column-wrap {
+    width: 100%;
+  }
+  .landing-short-form .how-work-content > .wp-block-kadence-column {
+    z-index: 2 !important;
+  }
+  .landing-short-form .banner-btn {
+    justify-content: center !important;
+  }
+  .landing-short-form .section-how-it-works .kt-inside-inner-col {
+    justify-content: center;
+    align-items: center;
+  }
+  .landing-short-form .section-how-it-works .how-work-content {
+    width: 100%;
+  }
+  .landing-short-form .section-how-it-works .kt-blocks-info-box-media {
+    padding-bottom: 0px;
+  }
+  .landing-short-form
+    .section-how-it-works
+    .kadence-info-box-image-inner-intrisic-container {
+    max-width: 50px !important;
+    padding-bottom: 0px;
+  }
+  .landing-short-form .section-how-it-works .wp-block-kadence-infobox {
+    max-width: 224px;
+  }
+  .landing-short-form .section-faq ul li {
+    line-height: 20px !important;
+    font-size: 15px !important;
+  }
+  .landing-short-form .section-faq ul {
+    padding-left: 18px !important;
+  }
+  .landing-short-form .top-arrow-mobile {
+    position: absolute !important;
+    transform: translate(23%, -88%);
+    left: 58%;
+  }
+  .landing-short-form .bottom-arrow-mobile {
+    position: absolute !important;
+    transform: translate(-50%, 42%);
+    top: 84%;
+    left: 25%;
+  }
+  .landing-short-form .section-get-started .kt-inside-inner-col {
+    background-color: transparent !important;
+  }
+  .landing-short-form .section-get-started::after,
+  .landing-short-form .section-get-started::before {
+    display: none;
+  }
+  .landing-short-form .banner-btn {
+    max-width: 186px;
+    margin: auto;
+  }
+}
 
- }
-
- @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .landing-short-form .section-money-back .kt-inside-inner-col {
     padding-left: 0px !important;
   }
-} 
+}
+
+/* chat Bot */
+.chat-bot .wp-block-group__inner-container {
+  max-width: 1488px;
+  margin: 0px auto;
+}
+.chat-bot .chat-bot-container {
+  max-width: inherit;
+}
+.chat-bot .section-banner {
+  width: calc(100% - 597px);
+  margin-left: 0px;
+}
+.chat-bot .content-wrapper {
+  width: calc(100% - 618px);
+}
+.chat-bot-main {
+  max-width: 590px;
+  width: 100%;
+  margin-right: 30px;
+  margin-left: auto;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.chat-bot-wrapper {
+  position: fixed;
+  z-index: 2;
+  width: inherit;
+  max-width: inherit;
+  bottom: 40px;
+  top: 140px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: #fff;
+}
+.chat-bot-inner-wrapper {
+  height: 100%;
+  overflow-y: scroll;
+}
+.chat-bot-inner-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.chat-bot-inner-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.chat-bot {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.chat-bot .section-testimonials .kt-testimonial-meta-wrap {
+  justify-content: center;
+}
+.chat-bot .section-about-esa p a {
+  color: #6dc0ff;
+}
+.chat-bot .section-about-esa p a:hover {
+  color: var(--global-palette3);
+}
+.chat-bot .section-testimonials .kt-testimonial-content {
+  text-align: left;
+}
+
+.chat-bot .section-testimonials .kt-blocks-testimonial-carousel-item {
+  height: 100%;
+}
+
+.chat-bot .section-testimonials .kt-testimonial-item-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.chat-bot .section-testimonials .kt-testimonial-text-wrap {
+  order: 2;
+}
+.chat-bot .section-testimonials .kt-testimonial-meta-wrap {
+  order: 1;
+}
+.chat-bot .section-testimonials .kt-testimonial-meta-wrap {
+  margin-top: unset;
+  padding-bottom: 10px;
+}
+
+.chat-bot .section-testimonials .kt-blocks-testimonial-carousel-item {
+  height: auto;
+}
+
+.chat-bot .section-testimonials .splide__arrow {
+  height: 2rem !important;
+  width: 2rem !important;
+  border-radius: 50px !important;
+  background: var(--global-palette4) !important;
+  color: var(--global-palette1) !important;
+}
+.chat-bot .section-testimonials .splide__arrow--next {
+  right: -26px !important;
+}
+
+.chat-bot .section-testimonials .splide__arrow--prev {
+  left: -26px !important;
+}
+.chat-bot .section-faq .kt-accordion-panel-inner p,
+.chat-bot .section-faq .kt-accordion-panel-inner li {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: Lato;
+  text-transform: capitalize;
+  color: #142c2a !important;
+}
+
+.chat-bot .section-faq .kt-accordion-panel-inner p,
+.chat-bot .section-faq .kt-accordion-panel-inner ul {
+  margin-bottom: 12px;
+}
+
+.chat-bot .section-moneyback {
+  position: relative;
+}
+.chat-bot .section-moneyback .moneyback-image-wrapper {
+  position: absolute;
+  top: 100px;
+  left: -31px;
+}
+.chat-bot .section-video {
+  width: 100%;
+}
+.chat-bot .section-video .mejs-controls {
+  display: none;
+}
+.chat-bot .section-video .video-wrapper {
+  width: 100%;
+}
+.chat-bot .section-video .video-wrapper .wp-block-kadence-column {
+  width: 100%;
+}
+.chat-bot .section-video .video-wrapper .mejs-overlay-button {
+  background: url("../images/play-button.png");
+  background-repeat: no-repeat;
+  height: 110px;
+  width: 110px;
+}
+.chat-bot
+  .section-video
+  .video-wrapper
+  .mejs-overlay:hover
+  > .mejs-overlay-button {
+  background-position: unset !important;
+}
+.chat-bot .team-puppy-image {
+  position: relative;
+}
+.chat-bot .team-puppy-image img {
+  position: absolute;
+  top: -63px;
+  right: 0;
+}
+.chat-bot .w-full {
+  width: 100%;
+}
+.chat-bot .section-brand-logo .brand-logo img {
+  opacity: 0.4;
+}
+.chat-bot .brand-logo-wrapper > .kt-inside-inner-col {
+  opacity: 0.6;
+}
+.chat-bot-info-button .kt-row-column-wrap {
+  grid-template-columns: minmax(0, 84px) minmax(0, 2fr) !important;
+  gap: 12px !important;
+}
+@media screen and (max-width: 1280px) {
+  .chat-bot .section-moneyback .moneyback-image-wrapper {
+    top: 148px;
+    max-width: 262px;
+    left: -9px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .chat-bot-main {
+    max-width: 470px;
+  }
+  .chat-bot .content-wrapper {
+    width: calc(100% - 488px);
+  }
+  .chat-bot .section-banner {
+    width: calc(100% - 477px);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .chat-bot .section-video .video-wrapper .mejs-overlay-button {
+    height: 90px;
+    width: 90px;
+    background-size: contain;
+  }
+  .chat-bot .section-banner {
+    width: calc(100% - 477px);
+  }
+  .chat-bot-wrapper {
+    top: 110px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .chat-bot-main {
+    max-width: 424px;
+  }
+  .chat-bot .content-wrapper {
+    width: calc(100% - 454px);
+  }
+  .chat-bot .section-banner {
+    width: calc(100% - 431px);
+  }
+}
+@media screen and (max-width: 886px) {
+  .chat-bot-main {
+    max-width: 380px;
+  }
+  .chat-bot .content-wrapper {
+    width: calc(100% - 400px);
+  }
+  .chat-bot .section-banner {
+    width: calc(100% - 387px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .chat-bot .section-banner {
+    width: unset;
+  }
+  .chat-bot .section-testimonials .splide__arrow--prev {
+    left: 6px !important;
+  }
+  .chat-bot .section-moneyback .moneyback-image-wrapper {
+    top: 58px;
+    max-width: 166px;
+    left: -11px;
+  }
+  .chat-bot .section-video .video-wrapper .mejs-overlay-button {
+    height: 60px;
+    width: 60px;
+  }
+  .chat-bot .section-banner > .kt-inside-inner-col {
+    background-position: 64%;
+  }
+  .chat-bot .section-discover {
+    order: 2;
+  }
+  .chat-bot .section-testimonials .splide__arrow--next {
+    right: 6px !important;
+  }
+  .chat-bot .section-testimonials .splide__arrow {
+    height: 20px !important;
+    width: 20px !important;
+  }
+  .chat-bot .section-testimonials .kt-testimonial-media-inner-wrap {
+    width: 50px !important;
+  }
+  .chat-bot .section-testimonials .kt-testimonial-name {
+    font-size: 18px !important;
+  }
+  .chat-bot .section-testimonials .kt-testimonial-content {
+    font-size: 16px !important;
+  }
+  .chat-bot .section-discover .image-wrapper {
+    order: 1;
+  }
+  .chat-bot .section-faq .kt-accordion-panel-inner p,
+  .chat-bot .section-faq .kt-accordion-panel-inner li {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .chat-bot .section-video .wp-block-kadence-column {
+    width: 100%;
+  }
+  .chat-bot-main {
+    max-width: 96%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .chat-bot-wrapper {
+    position: unset;
+    height: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+  .chat-bot .content-wrapper {
+    width: 100%;
+  }
+  .section-chat-header {
+    margin-right: 6px !important;
+    margin-left: 6px !important;
+  }
+  .chat-bot-wrapper {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .chat-bot .section-legitimate-esa p {
+    font-weight: 500 !important;
+  }
+}
+
+.chat-bot .experience-process-wrapper > .kt-inside-inner-col {
+  display: grid !important;
+  grid-template-columns: 282px 1fr;
+  gap: 56px;
+}
+
+@media screen and (max-width: 1200px) {
+  .chat-bot .experience-process-wrapper > .kt-inside-inner-col {
+    gap: 10px;
+    grid-template-columns: 142px 1fr;
+  }
+  .chat-bot .experience-process-wrapper .wp-block-kadence-advancedheading {
+    width: 100%;
+  }
+  .chat-bot .experience-process-wrapper .wp-block-kadence-advancedheading {
+    text-align: center !important;
+  }
+}
+
+.landing-long-form .medical-care-team-card .kt-inside-inner-col {
+  overflow: hidden;
+}
+
+.landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+  width: 390px !important;
+}
+
+.landing-long-form
+  .section-medical-care-team
+  .medical-rating
+  > .kt-row-column-wrap {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.landing-long-form .brand-logo-wrapper > .kt-inside-inner-col {
+  opacity: 0.6;
+}
+
+.landing-long-form .brand-logo-wrapper {
+  width: 100%;
+}
+
+.landing-long-form .section-banner-logo > .kt-row-column-wrap{
+  display: flex!important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+@media screen and (max-width: 767px){
+  .landing-long-form .section-banner-logo > .kt-row-column-wrap{
+    display: grid!important;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 100% !important;
+  }
+}
