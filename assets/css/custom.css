@@ -697,8 +697,11 @@ body.no-header.no-footer .entry-content-wrap {
   width: 390px !important;
 }
 
-.landing-long-form .section-medical-care-team .medical-rating > .kt-row-column-wrap{
-  display: flex!important;
+.landing-long-form
+  .section-medical-care-team
+  .medical-rating
+  > .kt-row-column-wrap {
+  display: flex !important;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -708,8 +711,22 @@ body.no-header.no-footer .entry-content-wrap {
   opacity: 0.6;
 }
 
-.landing-long-form .brand-logo-wrapper{
+.landing-long-form .brand-logo-wrapper {
   width: 100%;
+}
+
+.landing-long-form .section-banner-logo > .kt-row-column-wrap{
+  display: flex!important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+@media screen and (max-width: 767px){
+  .landing-long-form .section-banner-logo > .kt-row-column-wrap{
+    display: grid!important;
+    padding: 0px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -723,4 +740,3 @@ body.no-header.no-footer .entry-content-wrap {
     width: 100% !important;
   }
 }
-
