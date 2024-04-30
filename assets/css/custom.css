@@ -611,7 +611,7 @@ body.no-header.no-footer .entry-content-wrap {
     width: 60px;
   }
   .chat-bot .section-banner > .kt-inside-inner-col {
-    background-position: 64%;
+    background-position: 72%;
   }
   .chat-bot .section-discover {
     order: 2;
@@ -693,10 +693,6 @@ body.no-header.no-footer .entry-content-wrap {
   overflow: hidden;
 }
 
-.landing-long-form .section-medical-care-team .kb-splide .splide__slide {
-  width: 390px !important;
-}
-
 .landing-long-form
   .section-medical-care-team
   .medical-rating
@@ -715,23 +711,80 @@ body.no-header.no-footer .entry-content-wrap {
   width: 100%;
 }
 
-.landing-long-form .section-banner-logo > .kt-row-column-wrap{
-  display: flex!important;
-  justify-content: space-between;
+.landing-long-form .section-banner-logo > .kt-row-column-wrap {
+  display: flex !important;
+  justify-content: space-around;
   align-items: center;
   padding: 0px 20px;
 }
 
-@media screen and (max-width: 767px){
-  .landing-long-form .section-banner-logo > .kt-row-column-wrap{
-    display: grid!important;
+@media screen and (max-width: 767px) {
+  .landing-long-form .section-banner-logo > .kt-row-column-wrap {
+    display: grid !important;
     padding: 0px;
   }
 }
 
-@media screen and (max-width: 1200px) {
+/* landing long form section-medical-care-team */
+
+.landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+  width: 312px !important;
+}
+.landing-long-form .section-medical-care-team .kb-advanced-slide-inner-wrap {
+  padding: 0px !important;
+}
+.landing-long-form .section-medical-care-team .splide__arrows {
+  display: none;
+}
+.landing-long-form .section-medical-care-team .splide__arrows button {
+  border-radius: 50px;
+  height: 2rem;
+  background: #000;
+  opacity: 1;
+}
+
+@media screen and (min-width: 1261px) and (max-width: 1920px) {
+  .landing-long-form .section-medical-care-team .splide__list {
+    transform: translateX(-628px) !important;
+  }
+}
+@media screen and (max-width: 1260px) {
   .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
-    width: 50% !important;
+    width: 32% !important;
+  }
+  .landing-long-form .section-medical-care-team .splide__arrows {
+    display: block;
+    z-index: 99;
+  }
+}
+
+@media screen and (max-width: 1142px) {
+  .landing-long-form .section-medical-care-team .splide__arrows {
+    position: absolute;
+    bottom: -48px;
+    max-width: 120px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+  .section-medical-care-team {
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 33% !important;
+  }
+}
+@media screen and (max-width: 930px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 38% !important;
+  }
+}
+@media screen and (max-width: 830px) {
+  .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
+    width: 42% !important;
   }
 }
 
@@ -739,4 +792,131 @@ body.no-header.no-footer .entry-content-wrap {
   .landing-long-form .section-medical-care-team .kb-splide .splide__slide {
     width: 100% !important;
   }
+  .landing-long-form .section-medical-care-team .splide__arrows {
+    bottom: -32px !important;
+  }
+  .section-medical-care-team {
+    padding-bottom: 12px;
+  }
+  .landing-long-form
+    .section-banner
+    .trusted-customers-info-box
+    .kt-blocks-info-box-link-wrap {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Chat Bot section-medical-care-team */
+
+.chat-bot .section-medical-care-team .medical-rating > .kt-row-column-wrap {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.chat-bot .section-medical-care-team .kb-advanced-slide-inner-wrap {
+  padding: 0px !important;
+}
+
+.chat-bot .section-medical-care-team .splide__arrows {
+  position: absolute;
+  bottom: -8px;
+  max-width: 120px;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 99;
+}
+.chat-bot .section-medical-care-team .splide__arrows button {
+  border-radius: 50px;
+  height: 2rem;
+  background: #000;
+  opacity: 1;
+}
+.chat-bot .section-medical-care-team .splide__track {
+  max-width: 677px;
+  margin: 0px auto;
+}
+.chat-bot .section-medical-care-team .kb-splide .splide__slide {
+  width: 93% !important;
+}
+.chat-bot .section-medical-care-team .splide__list {
+  margin-right: 324px !important;
+}
+.chat-bot .section-banner-logo > .kt-row-column-wrap {
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 20px;
+}
+@media screen and (max-width: 1324px) {
+  .chat-bot .section-medical-care-team .splide__list {
+    margin-right: 0px !important;
+  }
+  .chat-bot .section-medical-care-team .kb-splide .splide__slide {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .chat-bot .section-medical-care-team .splide__arrows {
+    display: block;
+    z-index: 99;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .chat-bot .section-medical-care-team .kb-splide .splide__slide {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 1142px) {
+  .section-medical-care-team {
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .chat-bot .section-medical-care-team .kb-splide .splide__slide {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .chat-bot .section-medical-care-team .splide__arrows {
+    bottom: -10px !important;
+  }
+  .section-medical-care-team {
+    padding-bottom: 12px;
+  }
+  .chat-bot .section-banner-logo > .kt-row-column-wrap {
+    display: grid !important;
+    padding: 0px;
+  }
+  .chat-bot .section-banner-bg-image > .kt-inside-inner-col {
+    transform: scaleX(-1);
+  }
+  .chat-bot .section-banner-bg-image .section-pre-screening {
+    transform: scaleX(-1);
+  }
+}
+
+/* Landing long form banner section */
+
+.landing-long-form
+  .section-banner
+  .plans-wrapper
+  .payment-plans
+  .kt-inside-inner-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-long-form .section-banner .plans-wrapper .payment-plans-popup-wrapper .payment-plans-popup{
+  display: none;
+}
+
+.landing-long-form .section-banner .payment-plans-popup-wrapper:hover .payment-plans-popup{
+  display: block;
 }
