@@ -4,7 +4,7 @@ Author URI: https://rankfoundry.com/
 Tags: Custom Theme, Wellness Wag, RankFoundry
 Requires at least: 6.0
 Tested up to: 6.3.1
-Stable tag: 1.0.17
+Stable tag: 1.0.18
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,6 +14,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 A cutom WordPress theme for Wellness Wag
 
 == Changelog ==
+
+= 1.0.18 =
+* long form landing page fixes
 
 = 1.0.17 =
 * update custom style.css
