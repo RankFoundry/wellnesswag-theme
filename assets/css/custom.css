@@ -899,24 +899,3 @@ body.no-header.no-footer .entry-content-wrap {
     transform: scaleX(-1);
   }
 }
-
-/* Landing long form banner section */
-
-.landing-long-form
-  .section-banner
-  .plans-wrapper
-  .payment-plans
-  .kt-inside-inner-col {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.landing-long-form .section-banner .plans-wrapper .payment-plans-popup-wrapper .payment-plans-popup{
-  display: none;
-}
-
-.landing-long-form .section-banner .payment-plans-popup-wrapper:hover .payment-plans-popup{
-  display: block;
-}
