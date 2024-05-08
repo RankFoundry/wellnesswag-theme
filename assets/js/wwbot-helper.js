@@ -1,122 +1,55 @@
-function generateString(length) {
-    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
+if (!window.bh_getAllParamsFromUrl) {
+  window.bh_getAllParamsFromUrl = function () {
+    const urlParamsList = ['utm_source','utm_medium','utm_campaign','utm_id','utm_term','utm_content','gclid','ga_client','cid','sid', 'cp1','cp2'];
+
+    var url = new URL(window.location.href);
+    var searchParams = new URLSearchParams(url.search);
+
+    var urlParams = urlParamsList
+      .map(function (p) { return [p, searchParams.get(p)]; })
+      .reduce(function (acc, pair) { acc[pair[0]] = pair[1]; return acc; }, {});
+
+    return urlParams;
+  };
 }
 
-// Get a cookie
-const getCookie = name => {
-    const encodedName = encodeURIComponent(name);
-    const cookies = document.cookie.split(';').map(cookie => cookie.trim());
 
-    for (const cookie of cookies) {
-        if (cookie.startsWith(encodedName + '=')) {
-            const encodedValue = cookie.substring(encodedName.length + 1);
-            return decodeURIComponent(encodedValue);
-        }
-    }
-    return null;
-};
-// Set a cookie
-const setCookie = (name, value, days) => document.cookie = `${name}=${value}; expires=${new Date(Date.now() + days * 86400000).toUTCString()}; path=/`;
-// Delete a cookie
-const deleteCookie = name => setCookie(name, '', -1);
+if (!window.bh_getOrSetUrlParams) {
+  window.bh_getOrSetUrlParams = function () {
+    var urlParams;
 
-const getSpecifiedUrlParams = () => {
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    urlParams = JSON.parse(localStorage.getItem("_upm")) || JSON.parse(localStorage.getItem("bh_upm"));
+
+    if (!urlParams || urlParams === '{}') {
+      urlParams = getAllParamsFromUrl();
+      localStorage.setItem("bh_upm", JSON.stringify(urlParams));
     }
 
-    const parameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid','ga_client','cuid','creferrer','cid','sid'];
-    let trackingData = {};
-
-    parameters.forEach(param => {
-        const value = getParameterByName(param);
-        if (value) trackingData[param] = value;
-    });
-
-    return trackingData;
+    return urlParams;
+  };
 }
 
-const getGivenUrlParam = (paramKey) => {
-    const url = new URL(window.location.href);
-    const searchParams = new URLSearchParams(url.search);
-    let uParam = searchParams.get(paramKey);
+if (!window.getUpdatedHealyLink) {
+  window.getUpdatedHealyLink = (healyLink) => {
+    if (!window?.posthog) return healyLink;
 
-    return uParam;
-}
-
-const getOrSetCuid = () => {
-    let cuid;
-
-    cuid = getCookie('cuid');
-
-    if(!cuid) cuid = localStorage.getItem("cuid")
-
-    if(!cuid) {
-        cuid = getGivenUrlParam("cuid") || generateString(10);
-        localStorage.setItem("cuid", cuid);
-        setCookie('cuid', cuid);
-    }
-
-    return cuid;
-}
-
-const getOrSetCReferrer = () => {
-    let creferrer;
-
-    creferrer = getCookie('creferrer');
-
-    if(!creferrer) creferrer = localStorage.getItem("creferrer")
-    
-    if(!creferrer) {
-        creferrer = getGivenUrlParam("creferrer") || document.referrer || null;
-        localStorage.setItem("creferrer", creferrer);
-        setCookie('creferrer', creferrer);
-    }
-
-    return creferrer;
-}
-
-const getOrSetUtmParams = () => {
-    let utmParams;
-
-    utmParams = JSON.parse(getCookie('_utd'));
-
-    if(!utmParams || utmParams === '{}') {
-        utmParams = getSpecifiedUrlParams();
-        setCookie('_utd', JSON.stringify(utmParams), 30);
-        localStorage.setItem("_utd", JSON.stringify(utmParams));
-    }
-
-    return utmParams;
-}
-
-const getUpdatedHealyLink = (healyLink) => {
-    let customUserId = getOrSetCuid();
-    let creferrer = getOrSetCReferrer();
-    let utmParams = getOrSetUtmParams();
+    let posthogId = window?.posthog?.get_distinct_id();
+    let utmParams = window.bh_getAllParamsFromUrl();
 
     const url = new URL(healyLink);
     const searchParams = new URLSearchParams(url.search);
 
-    searchParams.set("cuid", customUserId);
-    searchParams.set("creferrer", creferrer);
+    searchParams.set("cuid", posthogId);
 
-    if(utmParams)
-        Object.entries(utmParams).forEach(param => {
-            if(!searchParams.has(param[0])) searchParams.set(param[0], param[1]);
-        });
-    
+    if (utmParams)
+      Object.entries(utmParams).forEach(param => {
+        if (!searchParams.has(param[0])) searchParams.set(param[0], param[1]);
+      });
+
     return `${url.origin}${url.pathname}?${searchParams.toString()}`;
+  }
 }
+
 
 window.isMobileDevice = (Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1);
 
