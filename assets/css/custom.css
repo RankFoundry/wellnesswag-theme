@@ -175,6 +175,11 @@
 body.no-header.no-footer .entry-content-wrap {
   padding: 0px;
 }
+.landing-long-form .wp-block-group__inner-container {
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .landing-short-form .intro-header .kt-inside-inner-col span {
   display: inline-block;
 }

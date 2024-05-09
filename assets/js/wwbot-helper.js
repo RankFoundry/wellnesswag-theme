@@ -180,7 +180,7 @@ window.wwchatHead = `
         <div class="card-body">
           <div class="dr-img-wrapper">
             <img
-              src="${window.themePath}/assets/images/doctor.png"
+              src="#THEMEPATH/assets/images/doctor.png"
               alt="Dr. Chance Miller"
             />
           </div>
@@ -188,7 +188,7 @@ window.wwchatHead = `
           <div class="content">
             <div class="heading-wrapper">
               <h2>Dr. Chance Miller, MD</h2>
-              <img src="${window.themePath}/assets/images/tick-badge.png" alt="badge" />
+              <img src="#THEMEPATH/assets/images/tick-badge.png" alt="badge" />
             </div>
             <p>
               Dr. Miller is a young and energetic, open-minded physician at the
@@ -197,7 +197,7 @@ window.wwchatHead = `
           </div>
           <div class="ratings">
             <img
-              src="${window.themePath}/assets/images/star.png"
+              src="#THEMEPATH/assets/images/star.png"
               alt="stars"
             />
             <p>55,255 Satisfied Customers</p>
