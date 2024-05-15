@@ -87,6 +87,11 @@
   top: 32px;
   left: -202px;
 }
+.landing-long-form .section-medical-care-team{
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .landing-long-form .section-video {
   width: 100%;
 }
@@ -141,6 +146,9 @@
   }
   .landing-long-form .section-banner > .kt-inside-inner-col {
     background-position: 64%;
+  }
+  .landing-long-form .section-medical-care-team{
+    max-width: 346px;
   }
   .landing-long-form .section-testimonials .splide__arrow--next {
     right: 6px !important;
