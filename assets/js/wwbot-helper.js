@@ -50,7 +50,6 @@ if (!window.getUpdatedHealyLink) {
   }
 }
 
-
 window.isMobileDevice = (Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1);
 
 window.wwchatHead = `

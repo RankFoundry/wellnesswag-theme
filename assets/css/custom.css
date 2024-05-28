@@ -87,7 +87,7 @@
   top: 32px;
   left: -202px;
 }
-.landing-long-form .section-medical-care-team{
+.landing-long-form .section-medical-care-team {
   max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
@@ -147,7 +147,7 @@
   .landing-long-form .section-banner > .kt-inside-inner-col {
     background-position: 64%;
   }
-  .landing-long-form .section-medical-care-team{
+  .landing-long-form .section-medical-care-team {
     max-width: 346px;
   }
   .landing-long-form .section-testimonials .splide__arrow--next {
@@ -674,6 +674,11 @@ body.no-header.no-footer .entry-content-wrap {
     margin-right: 6px !important;
     margin-left: 6px !important;
   }
+  .intake-form .section-chat-header {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-bottom: 10px !important;
+  }
   .chat-bot-wrapper {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -911,4 +916,224 @@ body.no-header.no-footer .entry-content-wrap {
   .chat-bot .section-banner-bg-image .section-pre-screening {
     transform: scaleX(-1);
   }
+}
+.relative {
+  position: relative;
+}
+.h-full {
+  height: 100%;
+}
+.w-full {
+  width: 100%;
+}
+.gap-0 {
+  gap: 0 !important;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.ww-checkbox {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  border-radius: 2px;
+  background-color: white;
+  cursor: pointer;
+}
+.ww-checkbox-1 {
+  top: -15px;
+  left: -100px;
+}
+.ww-checkbox-2 {
+  top: 15px;
+  left: -160px;
+}
+.ww-checkbox {
+  position: relative;
+}
+
+.ww-checkbox:checked {
+  background-color: #315655;
+}
+.ww-checkbox:not(:checked) {
+  border: 2px solid #315655;
+}
+.ww-checkbox:checked::after {
+  content: url(/wp-content/themes/wellnesswag-theme/assets/images/checkmark.png);
+  background-repeat: no-repeat;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.kb-section-dir-horizontal {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 1019px) {
+  .ww-checkbox-1 {
+    top: -15px;
+    left: -50px;
+  }
+  .ww-checkbox-2 {
+    top: 15px;
+    left: -120px;
+  }
+}
+
+.intake-form .chat-bot-main {
+  margin: 0px auto;
+  max-width: 524px;
+}
+.intake-form .chat-bot-wrapper {
+  top: 175px;
+  border: 2px solid var(--global-palette3);
+}
+.section-checkout-tabs > .kt-inside-inner-col {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-checkout-tabs .tab > .kt-row-column-wrap {
+  display: grid;
+  grid-template-columns: 50px 1fr 64px !important;
+}
+.section-checkout-tabs .tab > .kt-has-2-columns {
+  grid-template-columns: 50px 1fr !important;
+}
+.color-red {
+  color: #ff0c0c;
+}
+.timer-wrapper > .kt-row-column-wrap {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 12px !important;
+}
+.section-refund > .kt-row-column-wrap {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.section-confirmation > .kt-row-column-wrap {
+  display: flex !important;
+}
+.checkout-slider{
+  max-width: 495px;
+  margin: auto;
+}
+.checkout-slider .mejs-controls {
+  display: none;
+}
+.checkout-slider .splide__track {
+  border-radius: 24px;
+  overflow: hidden;
+}
+.cart-btn:hover {
+  opacity: 0.7;
+}
+.cart-btn {
+  position: relative !important;
+  z-index: 999 !important;
+}
+.esa-letter-cart:hover .esa-letter-content {
+  color: var(--global-palette-highlight) !important;
+}
+@media screen and (max-width: 767px) {
+  .section-confirmation > .kt-row-column-wrap {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 1340px) {
+  .section-checkout-tabs > .kt-inside-inner-col {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    overflow: scroll;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section-checkout-tabs .tab > .kt-row-column-wrap {
+    grid-template-columns: 38px 208px 34px !important;
+  }
+  .section-checkout-tabs > .kt-inside-inner-col {
+    grid-template-columns: repeat(4, 278px);
+  }
+}
+
+/* ESA letter checkout page */
+.esa-letter-timer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.esa-letter-plan-card .kb-section-link-overlay {
+  z-index: 0;
+}
+.section-checkout-form form label {
+  font-size: 18px;
+  font-family: "Lato";
+  line-height: 21px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.section-checkout-form form{
+  max-width: unset !important;
+  width: 100%;
+}
+.section-checkout-form form input:not([type="checkbox"]), .section-checkout-form form select{
+  width: 100% !important;
+  padding: 10px !important;
+  border-color:#C1C1C1 !important;
+  outline: unset !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+  color: #C1C1C1 !important;
+} 
+.section-checkout-form .simpay-styled .simpay-multi-plan-list-group input[type=radio]:checked+label{
+  background: #cd8051;
+  color: #fff;
+  box-shadow: none;
+}
+.simpay-styled .simpay-multi-plan-list-group input[type=radio]:checked+label svg{
+  stroke: #fff;
+}
+.section-checkout-form form input[type="checkbox"]{
+  width: 16px!important;
+}
+.section-checkout-form form input:focus, .section-checkout-form form select:focus{
+  outline: none;
+  border: 1px solid #315655 !important;
+  box-shadow: unset !important;
+}
+.section-checkout-form form button{
+  background: #CD8051 !important;
+  border-radius: 4px !important;
+  font-size: 18px !important;
+  line-height: 21px !important;
+}
+
+.section-checkout-form form button:hover{
+  opacity: 0.7;
+}
+.simpay-form-wrap { margin-top: 18px; }
+.simpay-embedded-heading { display: none; }
+input[name="simpay_customer_name"],input[name="simpay_email"] {width: 100%; color: unset;}
+select[name="simpay_field[state]"] {
+    width: 100%;
+    height: 42px;
+    padding: 6.8px 8.6px;
+    color: unset;
+}
+.simpay-checkbox-wrap {
+    display: flex;
+    align-items: baseline !important;
+    gap: 10px;
 }
