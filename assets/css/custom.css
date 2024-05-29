@@ -1,3 +1,6 @@
+.d-none {
+  display: none;
+}
 /* Payments Hover */
 .tip {
   position: relative;
@@ -1095,7 +1098,6 @@ body.no-header.no-footer .entry-content-wrap {
   font-size: 14px !important;
   line-height: 16px !important;
   font-weight: 400 !important;
-  color: #C1C1C1 !important;
 } 
 .section-checkout-form .simpay-styled .simpay-multi-plan-list-group input[type=radio]:checked+label{
   background: #cd8051;

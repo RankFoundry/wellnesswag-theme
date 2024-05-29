@@ -10,7 +10,8 @@
  *
  */
 
-// Retrieve email from query parameter
+try {
+    // Retrieve email from query parameter
 $payment_intent_id = isset($_GET['payment_intent']) ? sanitize_text_field($_GET['payment_intent']) : '';
 $customer_id = isset($_GET['customer_id']) ? sanitize_text_field($_GET['customer_id']) : '';
 
@@ -95,7 +96,7 @@ if (!empty($email) && !empty($payment_intent_id)) {
 
 $tracking_parameters = array('email' => $email);
 $emailTrackingParams = getTrackingInfoByEmail($email);
-if(!empty($emailTrackingParams)) {
+if(!is_null($emailTrackingParams) && !is_null($emailTrackingParams['tracking_info']) && !empty($emailTrackingParams)) {
     $tracking_parameters = array_merge($tracking_parameters, $emailTrackingParams['tracking_info']);
 }
 
@@ -119,4 +120,7 @@ setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes i
 // Redirect to the purchase page
 wp_redirect($thankyou_page_url);
 exit;
+} catch (\Throwable $th) {
+    var_dump($th);
+}
 ?>

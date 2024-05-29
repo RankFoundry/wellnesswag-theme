@@ -12,7 +12,7 @@
 
 // Retrieve email from query parameter
 $email = isset($_GET['email']) ? sanitize_email($_GET['email']) : '';
-$intake_submitted = isset($_GET['intake_submitted']) ? ($_GET['intake_submitted']) : '';
+$intake_submitted = isset($_GET['intake_submitted']) ? sanitize_text_field($_GET['intake_submitted']) : '';
 
 // Retrieve tracking parameters from cookie
 $tracking_cookie_name = '_cupm'; // Replace with the name of your tracking cookie
@@ -42,7 +42,7 @@ if(!empty($email) && !isset($_COOKIE[$tracking_cookie_name])) {
 
     $emailTrackingParams = getTrackingInfoByEmail($email);
 
-    if(!empty($emailTrackingParams)) {
+    if(!is_null($emailTrackingParams) && !is_null($emailTrackingParams['tracking_info']) && !empty($emailTrackingParams)) {
         $tracking_parameters = array_merge($tracking_parameters, $emailTrackingParams['tracking_info']);
     }
 }
