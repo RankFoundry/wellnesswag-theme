@@ -102,7 +102,7 @@ if(!is_null($emailTrackingParams) && !is_null($emailTrackingParams['tracking_inf
 
 
 // Redirect to the purchase page with tracking parameters
-$relative_thankyou_page_url = '/esa-letter/thank-you'; // Replace with your purchase page URL
+$relative_thankyou_page_url = '/esa-letter-checkout/thank-you'; // Replace with your purchase page URL
 
 $thankyou_page_url = home_url($relative_thankyou_page_url);
 
