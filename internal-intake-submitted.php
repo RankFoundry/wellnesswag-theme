@@ -48,7 +48,7 @@ if(!empty($email) && !isset($_COOKIE[$tracking_cookie_name])) {
 }
 
 // Redirect to the purchase page with tracking parameters
-$relative_purchase_page_url = '/esa-letter/add-to-cart'; // Replace with your purchase page URL
+$relative_purchase_page_url = '/esa-letter-letter/add-to-cart'; // Replace with your purchase page URL
 
 $purchase_page_url = home_url($relative_purchase_page_url);
 if (!empty($email)) {
