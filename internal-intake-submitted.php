@@ -27,15 +27,13 @@ if (isset($_COOKIE[$tracking_cookie_name])) {
     }
 }
 
-
 // Upsert tracking info
-if (!empty($email) && !empty($tracking_parameters)) {
+if (!empty($email) && !empty($tracking_parameters) && $intake_submitted) {
     $data = array(
         'tracking_info' => $tracking_parameters,
     );
     upsertUserInfo($email, $data);
 }
-
 
 if(!empty($email) && !isset($_COOKIE[$tracking_cookie_name])) {
     $tracking_parameters['email'] = $email;
