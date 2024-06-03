@@ -14,6 +14,11 @@
 $email = isset($_GET['email']) ? sanitize_email($_GET['email']) : '';
 $intake_submitted = isset($_GET['intake_submitted']) ? sanitize_text_field($_GET['intake_submitted']) : '';
 
+// Redirect to the purchase page with tracking parameters
+$relative_purchase_page_url = '/esa-letter-checkout/add-to-cart'; // Replace with your purchase page URL
+$purchase_page_url = home_url($relative_purchase_page_url);
+$redirect_url = isset($_GET['url']) ? sanitize_text_field($_GET['url']) : home_url($relative_purchase_page_url);
+
 // Retrieve tracking parameters from cookie
 $tracking_cookie_name = '_cupm'; // Replace with the name of your tracking cookie
 $tracking_parameters = array();
@@ -35,31 +40,32 @@ if (!empty($email) && !empty($tracking_parameters) && $intake_submitted) {
     upsertUserInfo($email, $data);
 }
 
+		if($_GET['dev']) {
+	var_dump('test');
+}
+
+
 if(!empty($email) && !isset($_COOKIE[$tracking_cookie_name])) {
     $tracking_parameters['email'] = $email;
 
     $emailTrackingParams = getTrackingInfoByEmail($email);
-
-    if(!is_null($emailTrackingParams) && !is_null($emailTrackingParams['tracking_info']) && !empty($emailTrackingParams)) {
+	
+    if(is_array($emailTrackingParams) && isset($emailTrackingParams['tracking_info']) && is_array($emailTrackingParams['tracking_info'])) {
         $tracking_parameters = array_merge($tracking_parameters, $emailTrackingParams['tracking_info']);
     }
 }
 
-// Redirect to the purchase page with tracking parameters
-$relative_purchase_page_url = '/esa-letter-checkout/add-to-cart'; // Replace with your purchase page URL
-
-$purchase_page_url = home_url($relative_purchase_page_url);
 if (!empty($email)) {
     // Append email to the purchase page URL
-    $purchase_page_url = add_query_arg('email', $email, $purchase_page_url);
+    $redirect_url = add_query_arg('email', $email, $redirect_url);
 }
 
 // Append tracking parameters to the purchase page URL
 foreach ($tracking_parameters as $key => $value) {
     if(isset($_GET[$key])) {
-        $purchase_page_url = add_query_arg($key, $_GET[$key], $purchase_page_url);
+        $redirect_url = add_query_arg($key, $_GET[$key], $redirect_url);
     } else {
-        $purchase_page_url = add_query_arg($key, $value, $purchase_page_url);
+        $redirect_url = add_query_arg($key, $value, $redirect_url);
     }
 }
 
@@ -71,6 +77,6 @@ if($intake_submitted) {
 }
 
 // Redirect to the purchase page
-wp_redirect($purchase_page_url);
+wp_redirect($redirect_url);
 exit;
 ?>

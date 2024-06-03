@@ -214,6 +214,7 @@ function inject_tracking_params_script() {
         window.getCookie = name => document.cookie.split('; ').reduce((r, v) => v.startsWith(name + '=') ? v.split('=')[1] : r, null);
         window.setCookie = (name, value, days) => document.cookie = `${name}=${value}; path=/; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`;
         window.deleteCookie = name => document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+		window.getDecodedURLParameter = name => decodeURIComponent(new URLSearchParams(window.location.search).get(name) || '') || null;
 
         const storeTrackingParamsInCookie = (paramsList, cookieName, cookieExpiryDays = 30) => {
             if (!paramsList || !Array.isArray(paramsList)) return;
@@ -226,6 +227,7 @@ function inject_tracking_params_script() {
             var searchParams = new URLSearchParams(url.search);
 
             var urlParams = paramsList
+				.filter(p => searchParams.get(p))
                 .map(function(p) { return [p,searchParams.get(p)]; })
                 .reduce(function(acc, pair) { acc[pair[0]] = pair[1]; return acc; }, {});
 			
@@ -238,6 +240,8 @@ function inject_tracking_params_script() {
         }
 
         storeTrackingParamsInCookie(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'msclkid', 'fbclid', '_ga','cuid','cid','sid','cp1','cp2'], '_cupm');
+		
+		
     </script>
     <?php
     $script = ob_get_clean();
