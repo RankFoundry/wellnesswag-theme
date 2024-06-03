@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.25');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.26');
 }
 
 // Define theme directory path
@@ -150,22 +150,22 @@ function upsertUserInfo($email, $data) {
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'user_tracking_info';
+	
+	// Check if a record with the specified email exists
+    $existing_record = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE email = %s", $email));
 
     // Encode JSON fields before storing in the database
-    if (isset($data['tracking_info']) && is_array($data['tracking_info'])) {
+    if (isset($data['tracking_info']) && is_array($data['tracking_info']) && (!$existing_record || is_null($existing_record->tracking_info))) {
         $data['tracking_info'] = json_encode($data['tracking_info']);
         // Update tracked_at date if tracking_info is set
         $data['tracked_at'] = current_time('mysql');
     }
 
-    if (isset($data['purchase_info']) && is_array($data['purchase_info'])) {
+    if (isset($data['purchase_info']) && is_array($data['purchase_info']) && (!$existing_record || is_null($existing_record->purchase_info))) {
         $data['purchase_info'] = json_encode($data['purchase_info']);
         // Update purchased_at date if purchase_info is set
         $data['purchased_at'] = current_time('mysql');
     }
-
-    // Check if a record with the specified email exists
-    $existing_record = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE email = %s", $email));
 
     if ($existing_record) {
         // Update the existing record
@@ -214,6 +214,7 @@ function inject_tracking_params_script() {
         window.getCookie = name => document.cookie.split('; ').reduce((r, v) => v.startsWith(name + '=') ? v.split('=')[1] : r, null);
         window.setCookie = (name, value, days) => document.cookie = `${name}=${value}; path=/; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`;
         window.deleteCookie = name => document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+		window.getDecodedURLParameter = name => decodeURIComponent(new URLSearchParams(window.location.search).get(name) || '') || null;
 
         const storeTrackingParamsInCookie = (paramsList, cookieName, cookieExpiryDays = 30) => {
             if (!paramsList || !Array.isArray(paramsList)) return;
@@ -226,13 +227,21 @@ function inject_tracking_params_script() {
             var searchParams = new URLSearchParams(url.search);
 
             var urlParams = paramsList
+				.filter(p => searchParams.get(p))
                 .map(function(p) { return [p,searchParams.get(p)]; })
                 .reduce(function(acc, pair) { acc[pair[0]] = pair[1]; return acc; }, {});
+			
+			// Check if the urlParams object is empty
+			var isEmpty = Object.keys(urlParams).length === 0;
 
-            setCookie(cookieName, JSON.stringify(urlParams), cookieExpiryDays);
+			if (!isEmpty) {
+				setCookie(cookieName, JSON.stringify(urlParams), cookieExpiryDays);
+			}            
         }
 
         storeTrackingParamsInCookie(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'msclkid', 'fbclid', '_ga','cuid','cid','sid','cp1','cp2'], '_cupm');
+		
+		
     </script>
     <?php
     $script = ob_get_clean();
