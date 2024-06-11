@@ -83,6 +83,12 @@ if (isset($payment_intent_id) && isset($customer_id)) {
 }
 
 $email = $payment_info['customer_info']['email'];
+	
+$transactionDetails = [
+	'transaction_id' => $payment_info['payment_intent']['id'] ?? null,
+	'amount' => $payment_info['payment_intent']['amount'] ?? 0,
+	'metadata' => $payment_info['payment_intent']['metadata'] ?? null,
+];
 
 
 // Upsert payment info
@@ -114,6 +120,21 @@ foreach ($tracking_parameters as $key => $value) {
 // Set the client-side cookie using PHP
 $cookie_name = 't_purchase';
 $cookie_value = 'true'; // Set the cookie value as needed
+$cookie_expiry = time() + (7 * 24 * 60 * 60); // Cookie expiry time (7 days from now)
+setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain
+
+
+// Set the client-side cookie using PHP
+$cookie_name = 't_transaction_amount';
+$cookie_value = (floatval($transactionDetails['amount'])/100); // Set the cookie value as needed
+$cookie_expiry = time() + (7 * 24 * 60 * 60); // Cookie expiry time (7 days from now)
+setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain
+
+	
+
+// Set the client-side cookie using PHP
+$cookie_name = 't_transaction_id';
+$cookie_value = ($transactionDetails['transaction_id']); // Set the cookie value as needed
 $cookie_expiry = time() + (7 * 24 * 60 * 60); // Cookie expiry time (7 days from now)
 setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain
 

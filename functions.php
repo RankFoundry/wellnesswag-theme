@@ -210,7 +210,7 @@ function getTrackingInfoByEmail($email) {
 function inject_tracking_params_script() {
     ob_start();
     ?>
-    <script>
+    <script nowprocket data-cfasync='false'>
         window.getCookie = name => document.cookie.split('; ').reduce((r, v) => v.startsWith(name + '=') ? v.split('=')[1] : r, null);
         window.setCookie = (name, value, days) => document.cookie = `${name}=${value}; path=/; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`;
         window.deleteCookie = name => document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
