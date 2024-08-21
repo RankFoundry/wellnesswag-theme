@@ -1027,7 +1027,7 @@ body.no-header.no-footer .entry-content-wrap {
 .section-confirmation > .kt-row-column-wrap {
   display: flex !important;
 }
-.checkout-slider{
+.checkout-slider {
   max-width: 495px;
   margin: auto;
 }
@@ -1086,56 +1086,1187 @@ body.no-header.no-footer .entry-content-wrap {
   font-weight: 500;
   margin-bottom: 8px;
 }
-.section-checkout-form form{
+.section-checkout-form form {
   max-width: unset !important;
   width: 100%;
 }
-.section-checkout-form form input:not([type="checkbox"]), .section-checkout-form form select{
+.section-checkout-form form input:not([type="checkbox"]),
+.section-checkout-form form select {
   width: 100% !important;
   padding: 10px !important;
-  border-color:#C1C1C1 !important;
+  border-color: #c1c1c1 !important;
   outline: unset !important;
   font-size: 14px !important;
   line-height: 16px !important;
   font-weight: 400 !important;
-} 
-.section-checkout-form .simpay-styled .simpay-multi-plan-list-group input[type=radio]:checked+label{
+}
+.section-checkout-form
+  .simpay-styled
+  .simpay-multi-plan-list-group
+  input[type="radio"]:checked
+  + label {
   background: #cd8051;
   color: #fff;
   box-shadow: none;
 }
-.simpay-styled .simpay-multi-plan-list-group input[type=radio]:checked+label svg{
+.simpay-styled
+  .simpay-multi-plan-list-group
+  input[type="radio"]:checked
+  + label
+  svg {
   stroke: #fff;
 }
-.section-checkout-form form input[type="checkbox"]{
-  width: 16px!important;
+.section-checkout-form form input[type="checkbox"] {
+  width: 16px !important;
 }
-.section-checkout-form form input:focus, .section-checkout-form form select:focus{
+.section-checkout-form form input:focus,
+.section-checkout-form form select:focus {
   outline: none;
   border: 1px solid #315655 !important;
   box-shadow: unset !important;
 }
-.section-checkout-form form button{
-  background: #CD8051 !important;
+.section-checkout-form form button {
+  background: #cd8051 !important;
   border-radius: 4px !important;
   font-size: 18px !important;
   line-height: 21px !important;
 }
 
-.section-checkout-form form button:hover{
+.section-checkout-form form button:hover {
   opacity: 0.7;
 }
-.simpay-form-wrap { margin-top: 18px; }
-.simpay-embedded-heading { display: none; }
-input[name="simpay_customer_name"],input[name="simpay_email"] {width: 100%; color: unset;}
+.simpay-form-wrap {
+  margin-top: 18px;
+}
+.simpay-embedded-heading {
+  display: none;
+}
+input[name="simpay_customer_name"],
+input[name="simpay_email"] {
+  width: 100%;
+  color: unset;
+}
 select[name="simpay_field[state]"] {
-    width: 100%;
-    height: 42px;
-    padding: 6.8px 8.6px;
-    color: unset;
+  width: 100%;
+  height: 42px;
+  padding: 6.8px 8.6px;
+  color: unset;
 }
 .simpay-checkbox-wrap {
+  display: flex;
+  align-items: baseline !important;
+  gap: 10px;
+}
+
+/* esa-letter-furry-friends */
+
+/* header */
+header .menu .kadence-svg-iconset svg {
+  font-size: 30px;
+  top: 2px;
+}
+header.site-header .site-header-row-layout-fullwidth {
+  box-shadow: 0px 4px 16px 0px #00000010;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+header .kadence-sticky-header .site-header-row-container-inner{
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.header-is-fixed header{
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+header .site-header-row.site-top-header-inner-wrap {
+  grid-template-columns: auto 1fr auto;
+}
+header .site-top-header-wrap .site-header-section-center {
+  justify-content: right;
+  margin-right: 34px;
+}
+header .site-top-header-wrap .site-container {
+  max-width: 1678px !important;
+  margin: 0px auto;
+}
+
+.body-font-lato {
+  font-family: Lato;
+}
+
+.banner-title-orange {
+  color: #ff9500;
+  font-weight: 700;
+  position: relative;
+}
+
+.banner-title-orange::before {
+  content: " ";
+  position: absolute;
+  background-image: url("../images/wave-image.png");
+  height: 32px;
+  width: 412px;
+  background-repeat: no-repeat;
+  border: 0px;
+  bottom: -28px;
+  left: -18px;
+}
+
+.esa-letter-furry-friends .emotional-support-wrapper ul li {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #062d2b;
+}
+
+.esa-letter-furry-friends .emotional-support-wrapper ul {
+  text-align: left;
+}
+
+.esa-letter-furry-friends .emotional-support-animals-adv-slider .splide__arrow {
+  border: unset !important;
+  background: unset !important;
+  height: unset !important;
+  width: unset !important;
+}
+
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .splide__arrow--prev::before {
+  content: " ";
+  background-image: url(../images/adv-slider-arrow-left.png);
+  height: 82px;
+  width: 82px;
+  position: absolute;
+  left: -118px;
+  background-repeat: no-repeat;
+}
+
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .splide__arrow--next::before {
+  content: " ";
+  background-image: url(../images/adv-slider-arrow-right.png);
+  height: 82px;
+  width: 82px;
+  position: absolute;
+  left: 36px;
+  background-repeat: no-repeat;
+}
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .splide__arrow--next
+  svg,
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .splide__arrow--prev
+  svg {
+  display: none !important;
+}
+
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .splide__arrow--prev
+  svg {
+  display: none;
+}
+
+.esa-letter-furry-friends .emotional-support-wrapper > .kt-row-column-wrap {
+  grid-template-columns: 542px 1fr !important;
+}
+
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .splide__pagination {
+  display: none !important;
+}
+
+.esa-letter-furry-friends .esa-contain-card {
+  position: relative;
+}
+
+.esa-letter-furry-friends .esa-contain-card::before {
+  content: " ";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: #ff9500;
+  border-radius: 50px;
+  right: -222px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.esa-letter-furry-friends .esa-contain-card::after {
+  content: "";
+  position: absolute;
+  background-color: #ff9500;
+  height: 5px;
+  width: 178px;
+  right: -266px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  z-index: -1;
+}
+
+.esa-letter-furry-friends .esa-contain-card.border-line-right-top::before {
+  left: -190px;
+  right: unset;
+}
+.esa-letter-furry-friends .esa-contain-card.border-line-right-top::after {
+  left: -88px;
+  right: unset;
+}
+
+.esa-letter-furry-friends .esa-video-wrapper {
+  border-radius: 40px;
+  overflow: hidden;
+  max-width: 1344px;
+  margin: 0px auto;
+}
+
+.esa-letter-furry-friends .discover-wellnesswag-section > .kt-row-column-wrap {
+  grid-template-columns: 496px 1fr !important;
+}
+.esa-letter-furry-friends
+  .discover-wellnesswag-section-grid-2
+  > .kt-row-column-wrap {
+  grid-template-columns: 1fr 496px !important;
+}
+.esa-letter-furry-friends
+  .discover-wellnesswag-section
+  > .kt-row-column-wrap
+  .wp-block-kadence-column {
+  max-width: unset !important;
+}
+.esa-letter-furry-friends
+  .discover-wellnesswag-section-grid-2
+  > .kt-row-column-wrap
+  .wp-block-kadence-column {
+  max-width: unset !important;
+}
+.esa-letter-furry-friends
+  .reliable-esa-letter-consultations
+  > .kt-row-column-wrap {
+  grid-template-columns: 740px 1fr !important;
+}
+
+.esa-letter-furry-friends .experience-box .kt-inside-inner-col:hover{
+	background-color: #0d5957;
+}
+.esa-letter-furry-friends .experience-box .kt-inside-inner-col:hover .wp-block-kadence-advancedheading{
+	color: #fff;
+}
+
+.esa-letter-furry-friends .care-team-doctor-card > .kt-row-column-wrap {
+  grid-template-columns: 456px 1fr;
+}
+.esa-letter-furry-friends
+  .care-team-slider-section
+  .kb-advanced-slide-inner-wrap {
+  padding: 0px !important;
+  min-height: unset !important;
+}
+.esa-letter-furry-friends
+  .care-team-slider-section
+  .kb-blocks-advanced-slider-init {
+  margin: 0px !important;
+}
+.esa-letter-furry-friends .care-team-slider-section {
+  position: relative;
+}
+.esa-letter-furry-friends .care-team-slider-section::before,
+.esa-letter-furry-friends .care-team-slider-section::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/care-team-box.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 357px;
+  width: 277px;
+  left: -5%;
+  transform: translate(-50%, -50%);
+  top: 54%;
+}
+.esa-letter-furry-friends .care-team-slider-section::after {
+  right: -27%;
+  left: unset;
+  z-index: -1;
+}
+.esa-letter-furry-friends .care-team-slider-section .slick-dots,
+.esa-letter-furry-friends .emotional-support-animals-adv-slider .slick-dots {
+  bottom: -90px !important;
+}
+.esa-letter-furry-friends .care-team-slider-section .slick-dots li button,
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .slick-dots
+  li
+  button {
+  height: 18px !important;
+  width: 18px !important;
+  background-color: #d9d9d9 !important;
+  opacity: 10 !important;
+  margin: 5px;
+}
+.esa-letter-furry-friends
+  .care-team-slider-section
+  .slick-dots
+  li
+  button.is-active,
+.esa-letter-furry-friends
+  .emotional-support-animals-adv-slider
+  .slick-dots
+  li
+  button.is-active {
+  background-color: #0d5957 !important;
+}
+.esa-letter-furry-friends .esa-faq-section .wp-block-kadence-pane {
+  border: 2px solid #0d5957 !important;
+  border-radius: 48px !important;
+  padding: 48px 48px !important;
+  background: #e3ebe4 !important;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-blocks-accordion-header {
+  border: unset !important;
+  background: unset !important;
+  padding: unset !important;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-panel-inner p {
+  font-family: "lato";
+  font-size: 24px;
+  line-height: normal;
+  color: #fff;
+}
+.esa-letter-furry-friends .esa-faq-section .accordion-pane-active {
+  background-color: #0d5957 !important;
+}
+.esa-letter-furry-friends
+  .esa-faq-section
+  .accordion-pane-active
+  .kt-blocks-accordion-title {
+  color: #fff !important;
+}
+.esa-letter-furry-friends
+  .esa-faq-section
+  .kt-blocks-accordion-icon-trigger::before {
+  content: " " !important;
+  background: url(../images/plus-icon.png) !important;
+  background-size: contain !important;
+  height: 28px;
+  width: 28px;
+  position: absolute;
+  top: 2px;
+}
+.esa-letter-furry-friends
+  .esa-faq-section
+  .accordion-pane-active
+  .kt-blocks-accordion-icon-trigger::before {
+  background: url(../images/minus-icon.png) !important;
+}
+.esa-letter-furry-friends
+  .esa-faq-section
+  .kt-blocks-accordion-icon-trigger::after {
+  content: unset !important;
+}
+.kt-accordion-panel-inner {
+  padding: 0px !important;
+  background-color: unset !important;
+}
+.esa-letter-furry-friends
+  .esa-faq-section
+  .kt-blocks-accordion-header
+  .kt-blocks-accordion-title-wrap {
+  color: #0d5957;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 56px;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.esa-letter-furry-friends .esa-video-wrapper figure {
+  border-radius: 50px;
+  overflow: hidden;
+}
+.esa-letter-testimonial-section
+  .kt-blocks-testimonial-carousel-item
+  .kt-testimonial-item-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.esa-letter-testimonial-section .kt-blocks-testimonial-carousel-item .kt-testimonial-content{
+  text-align: left;
+}
+.esa-letter-testimonial-section
+  .kt-blocks-testimonial-carousel-item
+  .kt-testimonial-meta-wrap {
+  order: 1;
+}
+.esa-letter-testimonial-section
+  .kt-blocks-testimonial-carousel-item
+  .kt-testimonial-text-wrap {
+  order: 2;
+}
+.esa-letter-testimonial-section
+  .kt-blocks-testimonial-carousel-item
+  .kt-testimonial-meta-wrap {
+  justify-content: flex-start !important;
+}
+.esa-letter-testimonial-section .splide__list {
+  align-items: center;
+}
+
+.esa-letter-furry-friends .esa-letter-testimonial-section .splide__arrow {
+  border: unset !important;
+  background: unset !important;
+  height: unset !important;
+  width: unset !important;
+}
+
+.esa-letter-furry-friends
+  .esa-letter-testimonial-section
+  .splide__arrow--prev::before {
+  content: " ";
+  background-image: url(../images/testimonial-arrow-left.png);
+  height: 82px;
+  width: 82px;
+  position: absolute;
+  left: -80px;
+  background-repeat: no-repeat;
+  top: -82px;
+}
+
+.esa-letter-furry-friends 
+.esa-letter-testimonial-section .splide__arrow svg{
+  display: none;
+}
+
+.esa-letter-furry-friends
+  .esa-letter-testimonial-section
+  .splide__arrow--next::before {
+  content: " ";
+  background-image: url(../images/testimonial-arrow-right.png);
+  height: 82px;
+  width: 82px;
+  position: absolute;
+  left: 0px;
+  top: -82px;
+  background-repeat: no-repeat;
+}
+
+.esa-letter-furry-friends
+  .esa-letter-testimonial-section
+  .splide__arrow--prev
+  svg {
+  display: none;
+}
+
+.esa-letter-furry-friends
+  .as-seen-section
+  .section-banner-logo
+  > .kt-row-column-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.esa-letter-furry-friends .as-seen-section {
+  margin-bottom: -74px;
+}
+
+.esa-letter-furry-friends .esa-letter-dog-banner > .kt-inside-inner-col {
+  background-size: 100% !important;
+  margin-left: -144px !important;
+}
+
+.esa-letter-furry-friends .care-team-slider-section .care-team-header .kt-inside-inner-col{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-direction: row;
+}
+
+.esa-letter-furry-friends .care-team-grid-section .kt-row-column-wrap{
+  display: grid;
+  grid-template-columns: 458px 1fr;
+  gap: 64px;
+}
+
+/* footer */
+.footer-bg-green .kt-inside-inner-col .wp-block-kadence-advancedheading a,
+.footer-bg-green .kt-inside-inner-col a {
+  color: #062d2b !important;
+}
+
+.footer-bg-green .social-section svg {
+  color: #fff;
+}
+
+.footer-bg-green .footer-grid-two > .kt-row-column-wrap {
+  display: grid;
+  grid-template-columns: 1fr 874px !important;
+}
+.footer-bg-green .footer-menu-section > .kt-inside-inner-col {
+  display: grid;
+  grid-template-columns: repeat(3, 266px) !important;
+  justify-content: space-between;
+}
+.footer-bg-green .footer-connect-with-us ul {
+  gap: 4px;
+  font-size: 22px !important;
+}
+.footer-bg-green .footer-connect-with-us ul li svg {
+  color: #fff !important;
+}
+
+.esa-letter-furry-friends .make-pet-an-esa-section {
+  position: relative;
+}
+.esa-letter-furry-friends .make-pet-an-esa-section .make-pet-an-esa-image {
+  position: absolute;
+  bottom: -47px;
+  left: -138px;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-header-wrap {
+  margin-top: 0px !important;
+}
+
+.esa-letter-furry-friends .make-pet-an-esa-content .kb-buttons-wrap {
+  max-width: 400px;
+  width: 100%;
+}
+
+.esa-letter-furry-friends
+  .care-team-doctor-card
+  .care-team-header
+  > .kt-inside-inner-col {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.esa-letter-testimonial .wp-block-kadence-testimonials .kt-blocks-carousel-init {
+  padding: 0px !important;
+}
+
+.esa-letter-testimonial .splide__pagination{
+  display: none !important;
+}
+
+.esa-letter-testimonial .kt-testimonial-rating-wrap {
+  gap: 6px;
+  display: flex;
+  justify-content: left;
+}
+.esa-letter-testimonial .splide__track{
+  margin: 0px auto;
+  max-width: 1230px;
+}
+
+.esa-faq-section .hidden{
+	display: none !important;
+}
+
+.esa-faq-section ul li{
+    font-size: 24px;
+    line-height: normal;
+    color: #fff;
+}
+
+.esa-faq-section ul{
+	display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media screen and (max-width: 1672px) {
+  .esa-letter-furry-friends .care-team-slider-section::before,
+  .esa-letter-furry-friends .care-team-slider-section::after {
+    content: unset !important;
+  }
+}
+
+@media screen and (max-width: 1640px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    background-size: 100% !important;
+  }
+  .esa-furry-friends-banner-section .banner-title {
+    font-size: 60px !important;
+    line-height: 66px !important;
+  }
+  .banner-title-orange::before {
+    background-size: 77%;
+  }
+}
+
+@media screen and (max-width: 1562px) {
+  .emotional-support-animal-section {
+    max-width: 1280px !important;
+  }
+  .esa-letter-furry-friends .emotional-support-wrapper > .kt-row-column-wrap {
+    gap: 24px !important;
+  }
+  .esa-letter-furry-friends .emotional-support-wrapper ul li {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .splide__arrow {
+    bottom: -80px;
+    top: unset !important;
+    left: 50%;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .splide__arrow--prev::before {
+    left: -96px !important;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .splide__arrow--next::before {
+    left: 14px !important;
+  }
+}
+@media screen and (max-width: 1450px) {
+  header .site-top-header-wrap .site-header-section-right .button {
+    padding: 12px 48px 12px 48px !important;
+  }
+  header .site-header-item {
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    padding-bottom: 190px !important;
+  }
+  .banner-title-orange::before {
+    background-size: 66%;
+  }
+  .esa-furry-friends-banner-section .banner-text {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+}
+@media screen and (max-width: 1405px) {
+  header .site-top-header-wrap .primary-menu-container > ul li.menu-item > a {
+    font-size: 18px !important;
+  }
+  header .site-top-header-wrap .site-header-section-right .button {
+    padding: 12px 40px 12px 40px !important;
+    font-size: 18px !important;
+  }
+  header .site-top-header-wrap .site-header-section-center {
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    padding-bottom: 160px !important;
+  }
+  .footer-bg-green .footer-grid-two > .kt-row-column-wrap {
+    display: grid;
+    grid-template-columns: 1fr 790px !important;
+  }
+  .esa-letter-furry-friends .make-pet-an-esa-section .make-pet-an-esa-image {
+    left: -96px;
+  }
+}
+@media screen and (max-width: 1380px) {
+  .esa-letter-furry-friends .esa-letter-discover-card > .kt-inside-inner-col {
+    border-radius: 20px;
+  }
+  .esa-letter-furry-friends .discover-wellnesswag-section > .kt-row-column-wrap,
+  .esa-letter-furry-friends
+    .reliable-esa-letter-consultations
+    > .kt-row-column-wrap {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1320px) {
+  .make-pet-an-esa-content {
+    max-width: 574px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    padding-top: 60px !important;
+    padding-bottom: 156px !important;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .esa-letter-furry-friends .experience-section .title-section {
+    font-size: 48px !important;
+    line-height: 52px !important;
+  }
+  .esa-letter-furry-friends .experience-section p {
+    font-size: 16px !important;
+  }
+  .esa-letter-furry-friends .care-team-content > .kt-inside-inner-col{
+    padding: 32px 32px 32px 0px !important;
+  }
+  .esa-letter-furry-friends .care-team-content .wp-block-kadence-advancedheading{
+    font-size: 24px !important;
+  }
+  .esa-letter-furry-friends .care-team-content p.wp-block-kadence-advancedheading{
+    font-size: 18px !important;
+  }
+  .esa-letter-furry-friends
+    .experience-wrapper
+    .experience-box
+    > .kt-inside-inner-col
+    .wp-block-kadence-advancedheading {
+    font-size: 26px !important;
+    line-height: 38px !important;
+  }
+  .esa-letter-furry-friends
+    .experience-wrapper
+    .experience-box
+    > .kt-inside-inner-col
+    p.wp-block-kadence-advancedheading {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+  .esa-letter-furry-friends
+    .esa-contain-card
+    .wp-block-kadence-advancedheading {
+    font-size: 24px !important;
+  }
+  .esa-letter-furry-friends
+    .esa-contain-card
+    p.wp-block-kadence-advancedheading {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  .footer-bg-green .footer-grid-two > .kt-row-column-wrap {
+    grid-template-columns: 1fr 700px !important;
+  }
+  .footer-bg-green .footer-menu-section > .kt-inside-inner-col {
+    grid-template-columns: repeat(3, 220px) !important;
+  }
+}
+@media screen and (max-width: 1262px) {
+  header .site-top-header-wrap .site-header-section-right .button {
+    padding: 10px 24px 10px 24px !important;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .esa-furry-friends-banner-section .banner-title {
+    font-size: 48px !important;
+    line-height: 58px !important;
+  }
+  header .site-top-header-wrap .site-branding a.brand img {
+    max-width: 162px;
+  }
+  header .site-top-header-wrap .primary-menu-container > ul li.menu-item > a {
+    font-size: 16px !important;
+  }
+  header .site-top-header-wrap .site-header-section-right .button {
+    padding: 10px 20px 10px 20px !important;
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    padding-top: 60px !important;
+    padding-bottom: 125px !important;
+    padding-left: 68px !important;
+  }
+  .esa-letter-furry-friends .care-team-grid-section .kt-row-column-wrap{
+    grid-template-columns: 390px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1184px) {
+  .esa-letter-furry-friends .emotional-support-wrapper ul li {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .emotional-support-animal-slider-content .kt-inside-inner-col {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  .emotional-support-animal-slider-content .wp-block-kadence-advancedbtn {
+    margin-top: 40px !important;
+    width: 100% !important;
+  }
+  .emotional-support-animal-slider-content
+    .wp-block-kadence-advancedbtn
+    .kb-button {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .esa-letter-furry-friends .emotional-support-wrapper > .kt-row-column-wrap {
+    gap: 24px !important;
     display: flex;
-    align-items: baseline !important;
-    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1164px) {
+  .esa-letter-furry-friends .care-team-doctor-card > .kt-row-column-wrap {
+    grid-template-columns: 456px 1fr !important;
+    align-items: center;
+    padding: 24px !important;
+  }
+}
+@media screen and (max-width: 1146px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    padding-top: 44px !important;
+    padding-bottom: 104px !important;
+    padding-left: 68px !important;
+  }
+  .footer-bg-green .footer-grid-two > .kt-row-column-wrap {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-bg-green p.wp-block-kadence-advancedheading {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+@media screen and (max-width: 1125px) {
+  .esa-letter-furry-friends
+    .experience-wrapper
+    .experience-box
+    > .kt-inside-inner-col {
+    padding-right: 36px !important;
+    padding-left: 36px !important;
+  }
+  .esa-letter-furry-friends .emotional-support-wrapper ul li {
+    font-size: 18px;
+    line-height: 29px;
+  }
+  .emotional-support-animal-slider-content .kt-inside-inner-col {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+}
+@media screen and (max-width: 1084px) {
+  .esa-furry-friends-banner-section .banner-title {
+    font-size: 42px !important;
+    line-height: 49px !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .experience-wrapper .experience-card-section .kt-has-3-columns {
+    grid-template-columns: repeat(2, 388px) !important;
+    justify-content: center !important;
+    gap: 48px !important;
+  }
+  .esa-letter-furry-friends
+    .care-team-doctor-card
+    .care-team-header
+    > .kt-inside-inner-col {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column !important;
+    gap: 0px !important;
+  }
+  .esa-letter-furry-friends .experience-section .title-section {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+  .esa-letter-furry-friends .experience-section p {
+    font-size: 12px !important;
+  }
+  .experience-wrapper .experience-card-section .kt-has-3-columns {
+    grid-template-columns: repeat(2, 358px) !important;
+    gap: 32px !important;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .splide__pagination {
+    display: block !important;
+    text-align: center;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .splide__arrows {
+    display: none !important;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .slick-dots
+    li
+    button {
+    height: 16px !important;
+    width: 16px !important;
+  }
+  header.site-header .site-top-header-wrap {
+    border-bottom-left-radius: 24px !important;
+    border-bottom-right-radius: 24px !important;
+  }
+  .esa-letter-furry-friends .emotional-support-animals-adv-slider .slick-dots {
+    bottom: -62px !important;
+  }
+  .esa-letter-furry-friends .esa-contains-wrapper .kt-has-3-columns {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .esa-letter-furry-friends .esa-contain-card::before,
+  .esa-letter-furry-friends .esa-contain-card::after {
+    content: unset !important;
+  }
+  .esa-letter-furry-friends .esa-letter-contains-1 .esa-contain-card {
+    margin-right: auto !important;
+  }
+  .esa-letter-furry-friends .esa-letter-contains-1 {
+    order: 3;
+  }
+  .esa-letter-furry-friends .esa-letter-contains-2 {
+    max-width: 320px;
+    margin: 0px auto;
+    order: 1;
+  }
+  .esa-letter-furry-friends .esa-letter-contains-3 {
+    order: 2;
+  }
+  .esa-letter-furry-friends .esa-letter-contains-3 .esa-contain-card {
+    margin-left: auto !important;
+    margin-bottom: 24px !important;
+  }
+  .esa-furry-friends-banner-section .banner-title {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+  .esa-letter-furry-friends .discover-wellnesswag-section > .kt-row-column-wrap,
+  .esa-letter-furry-friends
+    .reliable-esa-letter-consultations
+    > .kt-row-column-wrap {
+    grid-template-columns: 1fr !important;
+    max-width: 526px;
+    gap: 24px;
+  }
+  .esa-letter-furry-friends .discover-wellnesswag-section-grid-2 {
+    margin-top: 22px !important;
+  }
+  .esa-letter-furry-friends
+    .discover-wellnesswag-section-grid-2
+    .reliable-image-section {
+    order: 2;
+  }
+  .esa-letter-furry-friends
+    .discover-wellnesswag-section-grid-2
+    .esa-letter-discover-card
+    h3.wp-block-kadence-advancedheading {
+    width: 100%;
+  }
+  .esa-letter-furry-friends .care-team-doctor-card > .kt-row-column-wrap {
+    padding: 0px !important;
+  }
+  .care-team-slider-section {
+    max-width: 526px !important;
+  }
+  .esa-letter-furry-friends .care-team-doctor-card > .kt-row-column-wrap {
+    grid-template-columns: 1fr !important;
+    padding: 0px !important;
+    max-width: 526px;
+  }
+  .esa-letter-furry-friends .esa-faq-section .wp-block-kadence-pane {
+    padding: 24px 24px !important;
+    border-radius: 20px !important;
+    gap: 12px;
+  }
+  .esa-letter-furry-friends
+    .esa-faq-section
+    .kt-blocks-accordion-header
+    .kt-blocks-accordion-title-wrap {
+    font-size: 24px;
+    line-height: 32px;
+    padding-right: 24px !important;
+  }
+  .esa-letter-furry-friends .esa-faq-section .kt-accordion-panel-inner p {
+    font-size: 16px;
+    line-height: 20px;
+    padding-right: 24px !important;
+  }
+  .esa-letter-furry-friends .esa-faq-button .wp-block-kadence-advancedbtn {
+    width: 100%;
+    max-width: 400px;
+  }
+  .esa-letter-furry-friends .make-pet-an-esa-section > .kt-inside-inner-col {
+    border-radius: 24px !important;
+  }
+  .esa-letter-furry-friends .make-pet-an-esa-section .make-pet-an-esa-image {
+    left: 25%;
+    bottom: 89%;
+    max-width: 374px;
+  }
+  .footer-bg-green h6.wp-block-kadence-advancedheading {
+    font-size: 16px !important;
+  }
+  .footer-bottom-section h6 {
+    border-right: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+  .footer-bottom-section .kt-inside-inner-col {
+    border-right: 0px !important;
+  }
+  .esa-letter-testimonial .splide__pagination{
+    display: block !important;
+    text-align: center;
+    bottom: 26px !important;
+  }
+  .esa-letter-testimonial .splide__arrow{
+    display: none !important;
+  }
+  .esa-letter-testimonial .splide__pagination li button{
+    height: 16px !important;
+    width: 16px !important;
+    background-color: #d9d9d9 !important;
+    opacity: 10 !important;
+    margin: 5px;
+  }
+  .esa-letter-testimonial .splide__pagination li button.is-active{
+    background: #FF9500 !important;
+  }
+  .esa-letter-furry-friends .care-team-slider-section .care-team-header .kt-inside-inner-col{
+	align-items: flex-start;
+    gap: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .esa-letter-furry-friends .care-team-grid-section .kt-row-column-wrap{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .esa-letter-furry-friends .care-team-content > .kt-inside-inner-col{
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    padding-bottom: 80px !important;
+  }
+  .esa-furry-friends-banner-section > .kt-inside-inner-col {
+    background-size: 100% 100% !important;
+  }
+}
+@media screen and (max-width: 940px) {
+  .esa-letter-furry-friends .emotional-support-wrapper > .kt-row-column-wrap {
+    flex-direction: column;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .kb-advanced-slide-inner-wrap {
+    max-width: 500px !important;
+    margin: 0px auto;
+  }
+  .emotional-support-animal-slider-content .kt-inside-inner-col {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .esa-letter-furry-friends .emotional-support-wrapper ul li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .emotional-support-animal-slider-content .wp-block-kadence-advancedbtn {
+    margin-top: 16px !important;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .experience-section .kb-row-layout-wrap {
+    margin: 0px auto;
+  }
+  .banner-title-orange::before {
+    background-size: 43%;
+    bottom: -34px;
+  }
+  .experience-section .kt-has-2-columns {
+    gap: 0;
+  }
+	.care-team-slider-section {
+    max-width: 100% !important;
+  }
+  .experience-section .experience-title {
+    order: 2;
+  }
+  .experience-wrapper .experience-card-section .kt-has-3-columns {
+    grid-template-columns: repeat(1, 358px) !important;
+    gap: 16px !important;
+  }
+  header .site-top-header-wrap .site-branding a.brand img {
+    max-width: 142px;
+  }
+  .esa-letter-furry-friends
+    .experience-wrapper
+    .experience-box
+    > .kt-inside-inner-col {
+    padding: 36px 36px !important;
+  }
+  .esa-letter-furry-friends
+    .experience-wrapper
+    .experience-box
+    > .kt-inside-inner-col
+    .wp-block-kadence-advancedheading {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+  .esa-letter-furry-friends
+    .experience-wrapper
+    .experience-box
+    > .kt-inside-inner-col
+    p.wp-block-kadence-advancedheading {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+  .experience-box {
+    margin-top: 0px !important;
+  }
+  .footer-bg-green .footer-menu-section > .kt-inside-inner-col {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-bg-green figure {
+    display: block;
+    margin: 0px auto;
+  }
+}
+@media screen and (max-width: 630px) {
+  .esa-letter-furry-friends .make-pet-an-esa-section .make-pet-an-esa-image {
+    left: 17%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .experience-wrapper .experience-card-section .kt-has-3-columns {
+    grid-template-columns: 1fr !important;
+  }
+  .experience-wrapper .wp-block-kadence-advancedbtn,
+  .experience-wrapper .wp-block-kadence-advancedbtn .kb-button {
+    width: 100% !important;
+  }
+  .esa-letter-furry-friends
+    .emotional-support-animals-adv-slider
+    .kb-advanced-slide-inner-wrap {
+    max-width: 100% !important;
+    margin: 0px auto;
+  }
+  .esa-letter-furry-friends .emotional-support-wrapper ul {
+    padding-left: 20px !important;
+    margin-bottom: 16px !important;
+  }
+}
+@media screen and (max-width: 498px) {
+  .esa-letter-furry-friends .make-pet-an-esa-section .make-pet-an-esa-image {
+    left: 0%;
+  }
 }
