@@ -1439,10 +1439,41 @@ header .site-top-header-wrap .site-container {
   font-family: "lato";
   font-size: 24px;
   line-height: normal;
-  color: #fff;
+  color: #0d5957;
 }
 .esa-letter-furry-friends .esa-faq-section .accordion-pane-active {
   background-color: #0d5957 !important;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-pane:has(.kt-accordion-panel.kt-accordion-panel-active){
+  background-color: #0d5957 !important;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-pane:has(.kt-accordion-panel.kt-accordion-panel-active) .kt-blocks-accordion-title-wrap{
+  color: #fff !important;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-pane:has(.kt-accordion-panel.kt-accordion-panel-active) .wp-block-kadence-advancedheading{
+  color: #fff !important;
+}
+.esa-letter-furry-friends .esa-faq-section .hidden{
+	display: none !important;
+}
+
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-pane:has(.kt-accordion-panel.kt-accordion-panel-active) ul li{
+  color: #fff !important;
+}
+
+.esa-letter-furry-friends .esa-faq-section ul li{
+    font-size: 24px;
+    line-height: normal;
+    color: #0d5957;
+}
+
+.esa-letter-furry-friends .esa-faq-section ul{
+	display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.esa-letter-furry-friends .esa-faq-section .kt-accordion-pane:has(.kt-accordion-panel.kt-accordion-panel-active) .kt-blocks-accordion-icon-trigger::before {
+  background: url(../images/minus-icon.png) !important;
 }
 .esa-letter-furry-friends
   .esa-faq-section
@@ -1672,21 +1703,6 @@ header .site-top-header-wrap .site-container {
   max-width: 1230px;
 }
 
-.esa-faq-section .hidden{
-	display: none !important;
-}
-
-.esa-faq-section ul li{
-    font-size: 24px;
-    line-height: normal;
-    color: #fff;
-}
-
-.esa-faq-section ul{
-	display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
 
 @media screen and (max-width: 1672px) {
   .esa-letter-furry-friends .care-team-slider-section::before,
@@ -1795,6 +1811,17 @@ header .site-top-header-wrap .site-container {
     > .kt-row-column-wrap {
     align-items: center;
   }
+  .esa-letter-furry-friends .discover-wellnesswag-section > .kt-row-column-wrap,
+  .esa-letter-furry-friends
+    .reliable-esa-letter-consultations
+    > .kt-row-column-wrap {
+    grid-template-columns: 1fr !important;
+    max-width: 526px;
+    gap: 24px;
+  }
+  .esa-letter-furry-friends .discover-wellnesswag-section-grid-2 .reliable-image-section {
+    order: 2;
+}
 }
 @media screen and (max-width: 1320px) {
   .make-pet-an-esa-content {
@@ -1816,7 +1843,7 @@ header .site-top-header-wrap .site-container {
     font-size: 16px !important;
   }
   .esa-letter-furry-friends .care-team-content > .kt-inside-inner-col{
-    padding: 32px 32px 32px 0px !important;
+    padding: 24px 24px 24px 0px !important;
   }
   .esa-letter-furry-friends .care-team-content .wp-block-kadence-advancedheading{
     font-size: 24px !important;
@@ -1969,6 +1996,9 @@ header .site-top-header-wrap .site-container {
     justify-content: center !important;
     gap: 48px !important;
   }
+  .esa-letter-furry-friends .care-team-content > .kt-inside-inner-col{
+    padding: 0px !important;
+  }
   .esa-letter-furry-friends
     .care-team-doctor-card
     .care-team-header
@@ -2044,14 +2074,6 @@ header .site-top-header-wrap .site-container {
   .esa-furry-friends-banner-section .banner-title {
     font-size: 32px !important;
     line-height: 42px !important;
-  }
-  .esa-letter-furry-friends .discover-wellnesswag-section > .kt-row-column-wrap,
-  .esa-letter-furry-friends
-    .reliable-esa-letter-consultations
-    > .kt-row-column-wrap {
-    grid-template-columns: 1fr !important;
-    max-width: 526px;
-    gap: 24px;
   }
   .esa-letter-furry-friends .discover-wellnesswag-section-grid-2 {
     margin-top: 22px !important;

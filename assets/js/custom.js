@@ -35,19 +35,6 @@ startTimer(5*60); // 4 minutes in seconds
 
 
 jQuery(document).ready(function($) {
-    $('.esa-faq-section  .kt-acccordion-button-label-show').each(function() {
-        if ($(this).hasClass('kt-accordion-panel-active')) {
-            $(this).closest('.esa-faq-section  .kt-accordion-pane').addClass('accordion-pane-active');
-        }
-    });
-
-    $('.esa-faq-section  .kt-acccordion-button-label-show').on('click', function() {
-        $('.esa-faq-section  .kt-accordion-pane').removeClass('accordion-pane-active');
-        
-        if ($(this).hasClass('kt-accordion-panel-active')) {
-            $(this).closest('.esa-faq-section  .kt-accordion-pane').addClass('accordion-pane-active');
-        }
-    });
 	
 	$('#faq-explore-button').click(function() {
         // Show all hidden FAQs
