@@ -31,3 +31,17 @@ if(document.getElementById("countdown")){
 startTimer(5*60); // 4 minutes in seconds
 
 //Credits to Gulzaib from Pakistan
+
+
+
+jQuery(document).ready(function($) {
+	
+	$('#faq-explore-button').click(function() {
+        // Show all hidden FAQs
+        $('.esa-faq-section .hidden').removeClass('hidden');
+
+        // Hide the Explore All button
+        $(this).hide();
+    });
+});
+

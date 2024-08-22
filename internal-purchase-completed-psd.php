@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Internal Purchase Redirect
+ * Template Name: Internal Purchase Redirect PSD
  *
  * @package   Wellness_Wag_Theme
  * @link      https://rankfoundry.com
@@ -96,20 +96,19 @@ if (!empty($email) && !empty($payment_intent_id)) {
     $data = array(
         'purchase_info' => $payment_info,
     );
-    upsertUserInfo($email, $data);
+    upsertUserInfo($email, $data, 'psd');
 }
 
-$phone = getUserPhone($email);
 
-$tracking_parameters = array('email' => $email, 'phone' => $phone);
-// $emailTrackingParams = getTrackingInfoByEmail($email);
+$tracking_parameters = array('email' => $email);
+// $emailTrackingParams = getTrackingInfoByEmail($email, 'psd');
 // if(!is_null($emailTrackingParams) && !is_null($emailTrackingParams['tracking_info']) && !empty($emailTrackingParams)) {
 //     $tracking_parameters = array_merge($tracking_parameters, $emailTrackingParams['tracking_info']);
 // }
 
 
 // Redirect to the purchase page with tracking parameters
-$relative_thankyou_page_url = '/esa-letter-checkout/thank-you'; // Replace with your purchase page URL
+$relative_thankyou_page_url = '/psd-letter-checkout/thank-you'; // Replace with your purchase page URL
 
 $thankyou_page_url = home_url($relative_thankyou_page_url);
 
@@ -138,39 +137,13 @@ if($payment_info['payment_intent']['status'] == 'succeeded') {
 	$cookie_name = 't_transaction_id';
 	$cookie_value = ($transactionDetails['transaction_id']); // Set the cookie value as needed
 	$cookie_expiry = time() + (7 * 24 * 60 * 60); // Cookie expiry time (7 days from now)
-	setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain
-    
-    if(!isset($_COOKIE['t_phone']) && $phone) {
-        // Set the client-side cookie using PHP
-        $cookie_name = 't_phone';
-        $cookie_value = ($phone); // Set the cookie value as needed
-        $cookie_expiry = time() + (999 * 24 * 60 * 60); // Cookie expiry time (7 days from now)
-        setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain
-    }
-
-    // check if t_userid exists. if not then get it from db and set it in the cookie.
-    if(!isset($_COOKIE['t_userid'])) {
-        $userid = getUserUserid($email);
-        // NOTE: It should only be set if the intake_submitted is true
-        // if(!$userid) {
-        //     $userid = generateUniqueUserId();
-        //     serUserUserid($email, $userid);
-        // }
-        setcookie('t_userid', $userid, time() + (7 * 24 * 60 * 60), "/");
-    }
-
-    if (!isset($_COOKIE['_cgclid'])) {
-        $gclid = $tracking_parameters['gclid'];
-        if ($gclid) {
-            setcookie('_cgclid', $gclid, time() + (90 * 24 * 60 * 60), "/"); // Cookie set for 30 days
-        }
-    }
+	setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain	
 	
 	// Redirect to the purchase page
 	wp_redirect($thankyou_page_url);
 	exit;
 } else {
-	$addToCartUrl = 'https://wellnesswag.com/esa-letter-checkout/add-to-cart';
+	$addToCartUrl = 'https://wellnesswag.com/psd-letter-checkout/add-to-cart';
 	wp_redirect($addToCartUrl);
 	exit;
 }

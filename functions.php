@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.26');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.27');
 }
 
 // Define theme directory path
@@ -119,6 +119,31 @@ function create_tracking_table() {
     $sql = "CREATE TABLE $table_name (
         id mediumint(9) NOT NULL AUTO_INCREMENT,
         email varchar(100) NOT NULL,
+		phone varchar(100) NULL,
+		userid varchar(100) NULL,
+        tracking_info text DEFAULT NULL,
+        tracked_at datetime DEFAULT NULL,
+        purchase_info text DEFAULT NULL,
+        purchased_at datetime DEFAULT NULL,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+
+    // Include the necessary file to access dbDelta function
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+
+function create_psd_tracking_table() {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'user_tracking_info_psd';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        email varchar(100) NOT NULL,
+		phone varchar(100) NULL,
+        userid varchar(100) NULL,
         tracking_info text DEFAULT NULL,
         tracked_at datetime DEFAULT NULL,
         purchase_info text DEFAULT NULL,
@@ -140,55 +165,69 @@ function check_and_create_tracking_table() {
         // Update the option to indicate the table has been created
         update_option('my_tracking_table_created', 'yes');
     }
+    if (get_option('psd_tracking_table_created') !== 'yes') {
+        create_psd_tracking_table();
+        
+        // Update the option to indicate the table has been created
+        update_option('psd_tracking_table_created', 'yes');
+    }
 }
 
 // Hook the table creation function to the 'init' action
 add_action('init', 'check_and_create_tracking_table');
 
 // Function to insert or update user tracking information
-function upsertUserInfo($email, $data) {
+function upsertUserInfo($email, $data, $type = 'esa') {
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'user_tracking_info';
+
+    if($type == 'psd') $table_name = $wpdb->prefix . 'user_tracking_info_psd';
 	
 	// Check if a record with the specified email exists
     $existing_record = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE email = %s", $email));
+	
+	$dbdata = [];
 
     // Encode JSON fields before storing in the database
     if (isset($data['tracking_info']) && is_array($data['tracking_info']) && (!$existing_record || is_null($existing_record->tracking_info))) {
-        $data['tracking_info'] = json_encode($data['tracking_info']);
+        $dbdata['tracking_info'] = json_encode($data['tracking_info']);
         // Update tracked_at date if tracking_info is set
-        $data['tracked_at'] = current_time('mysql');
+        $dbdata['tracked_at'] = current_time('mysql');
     }
 
     if (isset($data['purchase_info']) && is_array($data['purchase_info']) && (!$existing_record || is_null($existing_record->purchase_info))) {
-        $data['purchase_info'] = json_encode($data['purchase_info']);
+        $dbdata['purchase_info'] = json_encode($data['purchase_info']);
         // Update purchased_at date if purchase_info is set
-        $data['purchased_at'] = current_time('mysql');
+        $dbdata['purchased_at'] = current_time('mysql');
     }
-
+	
+	if(count($dbdata) <= 0) return;
+	
     if ($existing_record) {
         // Update the existing record
         $wpdb->update(
             $table_name,
-            $data,
+            $dbdata,
             ['email' => $email]
         );
     } else {
         // Insert a new record
-        $data['email'] = $email;
+        $dbdata['email'] = $email;
         $wpdb->insert(
             $table_name,
-            $data
+            $dbdata
         );
     }
 }
 
 // Function to retrieve user tracking information by email
-function getTrackingInfoByEmail($email) {
+function getTrackingInfoByEmail($email, $type = 'esa') {
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'user_tracking_info';
+
+    if($type == 'psd') $table_name = $wpdb->prefix . 'user_tracking_info_psd';
 
     // Prepare and execute the query to fetch the tracking info for the given email
     $query = $wpdb->prepare("SELECT tracking_info, tracked_at, purchase_info, purchased_at FROM $table_name WHERE email = %s", $email);
@@ -207,16 +246,101 @@ function getTrackingInfoByEmail($email) {
     return $result;
 }
 
+function updateUserPhone($email, $phone, $type = 'esa') {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'user_tracking_info';
+
+    if($type == 'psd') $table_name = $wpdb->prefix . 'user_tracking_info_psd';
+	
+	$wpdb->update(
+        $table_name,
+        ['phone' => $phone],
+        ['email' => $email]
+    );
+}
+
+function getUserPhone($email, $type = 'esa') {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'user_tracking_info';
+
+    if($type == 'psd') $table_name = $wpdb->prefix . 'user_tracking_info_psd';
+
+    // Prepare and execute the query to fetch the tracking info for the given email
+    $query = $wpdb->prepare("SELECT phone FROM $table_name WHERE email = %s", $email);
+    $result = $wpdb->get_row($query, ARRAY_A);
+
+    if ($result) return $result['phone'];
+
+    return null;
+}
+
+function generateUniqueUserId($email) {
+    // Create a unique ID using the email, current time, and a random component
+    $timestamp = microtime(true); // Current time in microseconds
+    $randomNumber = mt_rand(); // Generate a random number
+
+    // Combine the email, timestamp, and random number
+    $input = $email . $timestamp . $randomNumber;
+
+    // Hash the combined input to generate the user ID
+    // Use SHA-256 and truncate to 14 characters
+    // There are approximately 7.5 x 10^21 possible unique IDs, making collisions highly unlikely
+    $userId = substr(hash('sha256', $input), 0, 14);
+
+    return $userId;
+}
+
+
+function serUserUserid($email, $userid, $type = 'esa') {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'user_tracking_info';
+
+    if($type == 'psd') $table_name = $wpdb->prefix . 'user_tracking_info_psd';
+
+	
+	$wpdb->update(
+        $table_name,
+        ['userid' => $userid],
+        ['email' => $email]
+    );
+}
+
+function getUserUserid($email, $type = 'esa') {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'user_tracking_info';
+
+    if($type == 'psd') $table_name = $wpdb->prefix . 'user_tracking_info_psd';
+
+    // Prepare and execute the query to fetch the tracking info for the given email
+    $query = $wpdb->prepare("SELECT userid FROM $table_name WHERE email = %s", $email);
+    $result = $wpdb->get_row($query, ARRAY_A);
+
+    if ($result) return $result['userid'];
+
+    return null;
+}
+
 function inject_tracking_params_script() {
     ob_start();
     ?>
-    <script>
+    <script nowprocket data-cfasync='false'>
         window.getCookie = name => document.cookie.split('; ').reduce((r, v) => v.startsWith(name + '=') ? v.split('=')[1] : r, null);
         window.setCookie = (name, value, days) => document.cookie = `${name}=${value}; path=/; expires=${new Date(Date.now() + days * 864e5).toUTCString()}`;
         window.deleteCookie = name => document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 		window.getDecodedURLParameter = name => decodeURIComponent(new URLSearchParams(window.location.search).get(name) || '') || null;
+        window.getQueryParam = param => new URLSearchParams(window.location.search).get(param);
 
-        const storeTrackingParamsInCookie = (paramsList, cookieName, cookieExpiryDays = 30) => {
+        const storeGclidInCookie = (gclid, cookieName, cookieExpiryDays = 90) => {
+            if (!gclid) return;
+            if (!cookieName) return;
+            setCookie(cookieName, gclid, cookieExpiryDays);
+        }
+
+        const storeTrackingParamsInCookie = (paramsList, cookieName, cookieExpiryDays = 90) => {
             if (!paramsList || !Array.isArray(paramsList)) return;
             if (!cookieName) return;
 
@@ -240,11 +364,36 @@ function inject_tracking_params_script() {
         }
 
         storeTrackingParamsInCookie(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'msclkid', 'fbclid', '_ga','cuid','cid','sid','cp1','cp2'], '_cupm');
-		
-		
+        window.gclid = getQueryParam('gclid');
+        storeGclidInCookie(window.gclid, '_cgclid');		
+
     </script>
     <?php
     $script = ob_get_clean();
     echo $script;
 }
 add_action('wp_head', 'inject_tracking_params_script');
+
+function add_x_client_country_header_and_cookie() {
+    if ( isset($_SERVER['HTTP_CF_IPCOUNTRY']) ) {
+        $client_country = sanitize_text_field($_SERVER['HTTP_CF_IPCOUNTRY']);
+        
+        // Add the X-Client-Country header
+        header('X-Client-Country: ' . $client_country);
+        
+        // Set a cookie with the same name and value, set to expire far in the future (e.g., 10 years)
+        setcookie('X-Client-Country', $client_country, time() + (10 * 365 * 24 * 60 * 60), "/"); // 10 years
+    }
+
+    if ( isset($_SERVER['HTTP_CF_REGION_CODE']) && isset($_SERVER['HTTP_CF_IPCOUNTRY'])  ) {
+        $client_country = sanitize_text_field($_SERVER['HTTP_CF_IPCOUNTRY']);
+		$client_region = sanitize_text_field($_SERVER['HTTP_CF_REGION_CODE']);
+        
+        // Add the X-Client-Country header
+        header('X-Client-Region: ' . $client_country . '-' . $client_region);
+        
+        // Set a cookie with the same name and value, set to expire far in the future (e.g., 10 years)
+        setcookie('X-Client-Region',$client_country . '-' . $client_region, time() + (10 * 365 * 24 * 60 * 60), "/"); // 10 years
+    }
+}
+add_action('send_headers', 'add_x_client_country_header_and_cookie');
