@@ -4,7 +4,7 @@ Author URI: https://rankfoundry.com/
 Tags: Custom Theme, Wellness Wag, RankFoundry
 Requires at least: 6.0
 Tested up to: 6.3.1
-Stable tag: 1.0.26
+Stable tag: 1.0.27
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,6 +14,14 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 A cutom WordPress theme for Wellness Wag
 
 == Changelog ==
+
+= 1.0.27 =
+* tracking functions removed from wp cache
+* add trascation amount and id to purchase event
+* furryfriends ui
+* furryfriends care-team slider and faq ui
+* updated tracking functions
+* added PSD tracking routes
 
 = 1.0.26 =
 * updated internal intake page
