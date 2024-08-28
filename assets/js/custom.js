@@ -43,5 +43,13 @@ jQuery(document).ready(function($) {
         // Hide the Explore All button
         $(this).hide();
     });
+    
+        // Check if there's a div with class "pawsitive"
+        if ($('.pawsitive').length) {
+            // If it exists, add the class "pawsitive-header" to the header element
+            $('header').addClass('pawsitive-header');
+            $('.popup-drawer').addClass('pawsitive-drawer');
+        }
+    
 });
 
