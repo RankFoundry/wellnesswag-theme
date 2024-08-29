@@ -1194,15 +1194,15 @@ header.esa-furry-friends-header .sub-menu-list-title{
 header.esa-furry-friends-header .menu-item a:hover{
   color: #0d5957 !important;
 }
-header.esa-furry-friends-header .site-top-header-wrap .menu-item > .kb-row-layout-wrap , header .site-top-header-wrap .menu-item .kt-row-column-wrap{
+header.esa-furry-friends-header .site-top-header-wrap .menu-item > .kb-row-layout-wrap , header.esa-furry-friends-header .site-top-header-wrap .menu-item .kt-row-column-wrap{
   background-color: #fff !important;
 }
-header.esa-furry-friends-header .site-header-row-layout-fullwidth {
+header .site-header-row-layout-fullwidth {
   box-shadow: 0px 4px 16px 0px #00000010;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
-header.esa-furry-friends-header .kadence-sticky-header .site-header-row-container-inner{
+header .kadence-sticky-header .site-header-row-container-inner{
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
