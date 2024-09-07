@@ -1020,12 +1020,9 @@ body.no-header.no-footer .entry-content-wrap {
   gap: 12px;
   align-items: center;
 }
-.section-confirmation > .kt-row-column-wrap {
-  display: flex !important;
-}
+
 .checkout-slider {
   max-width: 495px;
-  margin: auto;
 }
 .checkout-slider .mejs-controls {
   display: none;
@@ -1044,11 +1041,7 @@ body.no-header.no-footer .entry-content-wrap {
 .esa-letter-cart:hover .esa-letter-content {
   color: var(--global-palette-highlight) !important;
 }
-@media screen and (max-width: 767px) {
-  .section-confirmation > .kt-row-column-wrap {
-    display: block !important;
-  }
-}
+
 @media screen and (max-width: 1340px) {
   .section-checkout-tabs > .kt-inside-inner-col {
     display: flex;
@@ -1067,11 +1060,154 @@ body.no-header.no-footer .entry-content-wrap {
 }
 
 /* ESA letter checkout page */
+.progress-container {
+  background-color: #0d5957;
+  padding: 24px 20px 20px;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0px 4px 4px -4px #0c0c0d0d;
+}
+@media (max-width: 767px) {
+  .progress-container {
+    display: none;
+  }
+}
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1094px;
+  position: relative;
+}
+
+.progress .circle {
+  width: 44px;
+  height: 44px;
+  background-color: #165c55;
+  outline: 5px solid rgb(217 217 217 / 50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255 255 255 / 50%);
+  font-weight: 900;
+  font-size: 20px;
+  font-family: Lato;
+  z-index: 1;
+  outline-offset: -1px;
+}
+
+.progress .line {
+  height: 4px;
+  flex-grow: 1;
+  background-color: rgb(255 255 255 / 50%);
+  margin: 0 16px;
+  z-index: 0;
+  border-radius: 9999px;
+}
+
+.progress .circle.active {
+  background-color: #ffffff;
+  color: #062d2b;
+}
+.progress .circle.done {
+  background-color: #ffffff;
+  background-image: url("../images/green-check-icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  outline-color: #ffffff;
+}
+.progress .circle.done span {
+  display: none;
+}
+
+.progress .line.active  {
+  background-color: #ffffff;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  max-width: 1173px;
+}
+
+.progress-labels .label {
+  color: #ffffff88;
+  font-size: 20px;
+  text-align: center;
+  flex-grow: 1;
+  font-weight: 700;
+  font-family: Lato;
+  padding-left: 32px;
+}
+.progress-labels .label:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+.progress-labels .label:last-child {
+  padding-left: 0;
+  text-align: right;
+}
+.progress-labels .label.active {
+  color: #ffffff;
+}
+
+.mobile-progress-wrapper {
+  display: none;
+}
+@media (max-width: 767px) {
+  .mobile-progress-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 18px 16px;
+    background-color: #0d5957;
+    border-radius: 0 0px 16px 16px;
+    color: #ffffff;
+    box-shadow: 0px 1px 4px 0px #0c0c0d0d;
+    box-shadow: 0px 1px 4px 0px #0c0c0d1a;
+    font-family: "Lato";
+  }
+
+  .mobile-step-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #062d2b;
+    outline: 4px solid #d9d9d9;
+    outline-offset: -1px;
+  }
+
+  .mobile-step-info {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 16px;
+  }
+
+  .mobile-step-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
 .esa-letter-checkout-wrapper {
   background-color: #e3ebe4;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding-bottom: 40px;
 }
 .esa-letter-checkout-inner {
   background-color: #ffffff;
@@ -1079,14 +1215,30 @@ body.no-header.no-footer .entry-content-wrap {
   margin-left: auto;
   margin-right: auto;
   padding: 40px 16px;
-  box-shadow: 0px 4px 4px -4px #0C0C0D0D;
+  box-shadow: 0px 4px 4px -4px #0c0c0d0d;
 }
 @media (max-width: 767px) {
+  .esa-checkout-header-wrapper {
+    background-color: #0d5957;
+  }
+  .esa-checkout-header-inner {
+    background-color: #ffffff;
+    border-radius: 0 0 016px 16px;
+  }
+  .esa-letter-checkout-wrapper {
+    background-color: #ffffff;
+  }
   .esa-letter-checkout-inner {
     padding: 24px 16px;
   }
+  .conformation-left-col {
+    order: 2;
+  }
+  .conformation-right-col {
+    order: 1;
+  }
 }
-.ESA-letter-price-wrapper{
+.ESA-letter-price-wrapper {
   flex: unset !important;
 }
 .esa-letter-timer {
@@ -1096,11 +1248,12 @@ body.no-header.no-footer .entry-content-wrap {
 }
 .esa-letter-plan-card {
   border-radius: 24px;
-  box-shadow: 0px 4px 4px -1px rgba(12, 12, 13, 0.1), 0px 4px 4px -1px rgba(12, 12, 13, 0.05);
+  box-shadow: 0px 4px 4px -1px rgba(12, 12, 13, 0.1),
+    0px 4px 4px -1px rgba(12, 12, 13, 0.05);
 }
 .esa-privacy-link {
   text-decoration: underline;
-  color: #0D5957;
+  color: #0d5957;
   display: inline-block;
 }
 .esa-letter-plan-card .kb-section-link-overlay {
@@ -1127,13 +1280,16 @@ body.no-header.no-footer .entry-content-wrap {
   line-height: 16px !important;
   font-weight: 400 !important;
 }
+.simpay-styled .simpay-multi-plan-list-group label {
+  border-radius: 16px;
+}
 .section-checkout-form
   .simpay-styled
   .simpay-multi-plan-list-group
   input[type="radio"]:checked
   + label {
-  background: #cd8051;
-  color: #fff;
+  background: #e3ebe4;
+  color: #062d2b;
   box-shadow: none;
 }
 .simpay-styled
@@ -1141,7 +1297,8 @@ body.no-header.no-footer .entry-content-wrap {
   input[type="radio"]:checked
   + label
   svg {
-  stroke: #fff;
+  stroke: #062d2b;
+  border-radius: 16px;
 }
 .section-checkout-form form input[type="checkbox"] {
   width: 16px !important;
@@ -1153,12 +1310,15 @@ body.no-header.no-footer .entry-content-wrap {
   box-shadow: unset !important;
 }
 .section-checkout-form form button {
-  background: #cd8051 !important;
-  border-radius: 4px !important;
+  background: #0d5957 !important;
+  border-radius: 9999px !important;
   font-size: 18px !important;
   line-height: 21px !important;
 }
-
+.simpay-checkout-btn {
+  height: 56px !important;
+  font-weight: 700 !important;
+}
 .section-checkout-form form button:hover {
   opacity: 0.7;
 }
@@ -1181,7 +1341,7 @@ select[name="simpay_field[state]"] {
 }
 .simpay-checkbox-wrap {
   display: flex;
-  align-items: baseline !important;
+  align-items: center !important;
   gap: 10px;
 }
 
