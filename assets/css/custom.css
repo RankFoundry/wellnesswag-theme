@@ -1,6 +1,9 @@
 .d-none {
   display: none;
 }
+.text-line-through {
+  text-decoration: line-through;
+}
 /* Payments Hover */
 .tip {
   position: relative;
@@ -1210,6 +1213,7 @@ body.no-header.no-footer .entry-content-wrap {
   padding-bottom: 40px;
 }
 .esa-letter-checkout-inner {
+  min-height: 800px;
   background-color: #ffffff;
   max-width: 1300px;
   margin-left: auto;
@@ -1218,6 +1222,9 @@ body.no-header.no-footer .entry-content-wrap {
   box-shadow: 0px 4px 4px -4px #0c0c0d0d;
 }
 @media (max-width: 767px) {
+  .esa-letter-checkout-inner {
+    min-height: 667px;
+  }
   .esa-checkout-header-wrapper {
     background-color: #0d5957;
   }
