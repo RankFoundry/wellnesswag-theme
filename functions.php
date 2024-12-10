@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 /*--------------------------------------------------------------*/
 // Define theme version
 if (!defined('WELLNESS_WAG_THEME_VERSION')) {
-    define('WELLNESS_WAG_THEME_VERSION', '1.0.30');
+    define('WELLNESS_WAG_THEME_VERSION', '1.0.31');
 }
 
 // Define theme directory path
@@ -397,3 +397,41 @@ function add_x_client_country_header_and_cookie() {
     }
 }
 add_action('send_headers', 'add_x_client_country_header_and_cookie');
+
+// Load stripe js and css on checkout pages only not on other pages
+/**
+ * @link https://library.wpcode.com/editor/e5wn795d/
+ */	
+add_filter(
+    'simpay_before_register_public_scripts',
+    function( $scripts ) {
+        $payment_slugs = array('esa-letter-checkout', 'psd-letter-checkout');
+        $current_link = get_permalink();
+
+        if (!array_filter($payment_slugs, function($slug) use ($current_link) {
+            return strpos($current_link, $slug) !== false;
+        })) {
+            return array();
+        }
+
+        return $scripts;
+    },
+    20
+);
+
+add_filter(
+    'simpay_before_register_public_styles',
+    function( $styles ) {
+        $payment_slugs = array('esa-letter-checkout', 'psd-letter-checkout');
+        $current_link = get_permalink();
+
+        if (!array_filter($payment_slugs, function($slug) use ($current_link) {
+            return strpos($current_link, $slug) !== false;
+        })) {
+            return array();
+        }
+
+        return $styles;
+    },
+    20
+);
