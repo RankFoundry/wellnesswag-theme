@@ -50,22 +50,49 @@ if (!window.bh_getOrSetUrlParams) {
 
 if (!window.getUpdatedHealyLink) {
   window.getUpdatedHealyLink = (healyLink) => {
-    if (!window?.posthog) return healyLink;
+    // First check if PostHog exists and has the required method
+    if (!window?.posthog?.identify) return healyLink;
 
-    let posthogId = window?.posthog?.get_distinct_id();
-    let utmParams = window.bh_getAllParamsFromUrl();
+    // Get PostHog ID safely using the proper method
+    let posthogId;
+    try {
+      posthogId =
+        window.posthog.get_session_id() || window.posthog.get_distinct_id();
+    } catch (e) {
+      console.warn("Unable to get PostHog ID:", e);
+      return healyLink;
+    }
 
-    const url = new URL(healyLink);
-    const searchParams = new URLSearchParams(url.search);
+    // If no PostHog ID, return original link
+    if (!posthogId) return healyLink;
 
-    searchParams.set("cuid", posthogId);
+    try {
+      // Get UTM parameters if the function exists
+      let utmParams =
+        typeof window.bh_getAllParamsFromUrl === "function"
+          ? window.bh_getAllParamsFromUrl()
+          : {};
 
-    if (utmParams)
-      Object.entries(utmParams).forEach((param) => {
-        if (!searchParams.has(param[0])) searchParams.set(param[0], param[1]);
-      });
+      const url = new URL(healyLink);
+      const searchParams = new URLSearchParams(url.search);
 
-    return `${url.origin}${url.pathname}?${searchParams.toString()}`;
+      // Set customer ID
+      searchParams.set("cuid", posthogId);
+
+      // Add UTM parameters if they exist
+      if (utmParams && typeof utmParams === "object") {
+        Object.entries(utmParams).forEach(([key, value]) => {
+          if (!searchParams.has(key)) {
+            searchParams.set(key, value);
+          }
+        });
+      }
+
+      return `${url.origin}${url.pathname}?${searchParams.toString()}`;
+    } catch (e) {
+      console.warn("Error updating Healy link:", e);
+      return healyLink;
+    }
   };
 }
 

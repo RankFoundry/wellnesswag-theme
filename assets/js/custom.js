@@ -33,32 +33,31 @@ startTimer(5*60); // 4 minutes in seconds
 //Credits to Gulzaib from Pakistan
 
 
-
-jQuery(document).ready(function($) {
-	
-	$('#faq-explore-button').click(function() {
-        // Show all hidden FAQs
-        $('.esa-faq-section .hidden').removeClass('hidden');
-
-        // Hide the Explore All button
+if (
+  document.querySelector("#faq-explore-button") ||
+  document.querySelector(".pawsitive") ||
+  document.querySelector(".esa-letter-furry-friends")
+) {
+  // Your jQuery code here
+  jQuery(document).ready(function ($) {
+    // FAQ button code - only runs if element exists
+    if ($("#faq-explore-button").length) {
+      $("#faq-explore-button").click(function () {
+        $(".esa-faq-section .hidden").removeClass("hidden");
         $(this).hide();
-    });
-    
-        // Check if there's a div with class "pawsitive"
-        if ($('.pawsitive').length) {
-            // If it exists, add the class "pawsitive-header" to the header element
-            $('header').addClass('pawsitive-header');
-            $('.popup-drawer').addClass('pawsitive-drawer');
-        }
+      });
+    }
 
-        // check if there's a div with class "furryfriends"
+    // Pawsitive section code - only runs if element exists
+    if ($(".pawsitive").length) {
+      $("header").addClass("pawsitive-header");
+      $(".popup-drawer").addClass("pawsitive-drawer");
+    }
 
-        if ($('.esa-letter-furry-friends ').length) {
-            // If it exists, add the class "pawsitive-header" to the header element
-            $('header').addClass('esa-furry-friends-header');
-            $('.popup-drawer').addClass('esa-furry-friends-drawer');
-        }
-    
-});
-
-
+    // Furry friends section code - only runs if element exists
+    if ($(".esa-letter-furry-friends").length) {
+      $("header").addClass("esa-furry-friends-header");
+      $(".popup-drawer").addClass("esa-furry-friends-drawer");
+    }
+  });
+}
