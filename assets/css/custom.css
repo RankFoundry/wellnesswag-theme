@@ -3754,7 +3754,7 @@ header.pawsitive-header .sub-menu-list-title {
   }
   .pawsitive-chat .kb-splide .splide__pagination,
   .kb-splide ul.splide__pagination.splide__pagination {
-    bottom: 0px !important;
+    bottom: -40px !important;
   }
   .pawsitive-chat .kb-blocks-advanced-slider-init[data-slider-dots="true"] {
     margin-bottom: 0 !important;

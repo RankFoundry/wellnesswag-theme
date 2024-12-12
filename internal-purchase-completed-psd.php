@@ -137,7 +137,100 @@ if($payment_info['payment_intent']['status'] == 'succeeded') {
 	$cookie_name = 't_transaction_id';
 	$cookie_value = ($transactionDetails['transaction_id']); // Set the cookie value as needed
 	$cookie_expiry = time() + (7 * 24 * 60 * 60); // Cookie expiry time (7 days from now)
-	setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain	
+	setcookie($cookie_name, $cookie_value, $cookie_expiry, '/'); // Path '/' makes it available across the whole domain
+
+    function checkEmailAndGenerateToken($email) {
+        // $allowedDomains = ['wellnesswag.com', 'enacton.com'];
+        // $domain = substr(strrchr($email, "@"), 1);
+        
+        // if (!in_array($domain, $allowedDomains)) {
+        //     return null;
+        // }
+        
+        $curl = curl_init();
+        
+        $headers = [
+            "Content-Type: application/json",
+            "User-Agent: Insomnia/2023.5.8"
+        ];
+    
+        $postFields = json_encode(["email" => $email, "type" => "PSD"]);
+        
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://care.wellnesswag.com/api/generate-token/",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $postFields,
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_POSTREDIR => CURL_REDIR_POST_ALL,
+        ]);
+        
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        
+        curl_close($curl);
+        
+        if ($err) {
+            error_log("cURL Error in checkEmailAndGenerateToken: " . $err);
+            return null;
+        }
+        
+        if ($httpCode >= 400) {
+            error_log("API Error in checkEmailAndGenerateToken: HTTP Code " . $httpCode);
+            return null;
+        }
+        
+        // Try to decode as JSON first
+        $decodedResponse = json_decode($response, true);
+        
+        if (json_last_error() === JSON_ERROR_NONE) {
+            // It's a valid JSON
+            if (isset($decodedResponse['success']) && $decodedResponse['success'] == true) {
+                return $decodedResponse;
+            }
+        } else {
+            // It's not a JSON, assume it's a direct URL string
+            if (filter_var($response, FILTER_VALIDATE_URL)) {
+                return trim($response);
+            }
+        }
+        
+        error_log("Unexpected response in checkEmailAndGenerateToken: " . substr($response, 0, 1000));
+        return null;
+    }
+
+    $patientResponseData = checkEmailAndGenerateToken($email);
+    $redirectUrl = $patientResponseData['redirectUrl'];
+
+    if ($redirectUrl !== null) {
+        $cookie_name = 'portal_login_url';
+        $cookie_value = $redirectUrl;
+        $cookie_expiry = time() + (24 * 60 * 60); // 24 hours
+        setcookie($cookie_name, $cookie_value, $cookie_expiry, '/', '', true, false);
+    }
+
+    $patientData = [];
+    if ($redirectUrl !== null) {
+        $cookie_name = 'patient_data';
+
+        $patientData['token'] = $patientResponseData['token'] ?? '';
+        $patientData['pet_species'] = $patientResponseData['pets'][0]['type'] ?? '';
+        $patientData['pet_gender'] = $patientResponseData['pets'][0]['gender'] ?? '';
+        $patientData['pet_age'] = $patientResponseData['pets'][0]['age'] ?? '';
+        $patientData['pet_name'] = $patientResponseData['pets'][0]['name'] ?? '';
+        $patientData['state'] = $patientResponseData['user']['state'] ?? '';
+
+        $cookie_value = json_encode($patientData);
+        $cookie_expiry = time() + (24 * 60 * 60); // 24 hours
+        setcookie($cookie_name, $cookie_value, $cookie_expiry, '/', '', true, false);
+    }
+
 	
 	// Redirect to the purchase page
 	wp_redirect($thankyou_page_url);
